@@ -1,3 +1,4 @@
+import SideBar from "@/components/sidebar/SideBar";
 import "@/styles/globals.css";
 
 import { GeistSans } from "geist/font/sans";
@@ -14,7 +15,12 @@ export default function RootLayout({
 }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en" className={`${GeistSans.variable}`}>
-      <body>{children}</body>
+      <body className="h-screen w-full bg-background">
+        <SideBar />
+        <main className="ml-auto w-[calc(100%-17vw)] px-9 py-7">
+          {children}
+        </main>
+      </body>
     </html>
   );
 }
