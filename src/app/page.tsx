@@ -3,6 +3,7 @@ import FlowChart from "@/components/flowchart";
 import Collapsible from "@/components/ui/collapsible";
 import InfoBlock from "@/components/ui/InfoBlock";
 import { SECTION_COLS_DATA } from "@/data/main";
+import { Server } from "lucide-react";
 import { Fragment } from "react";
 
 export default function HomePage() {
@@ -57,7 +58,66 @@ export default function HomePage() {
         </h3>
 
         <div className="flex justify-between">
-          <div className="rounded-[15px] border border-[#F0F1F3] shadow-md"></div>
+          <div className="overflow-hidden rounded-xl border shadow">
+            <table className="w-full table-auto border-collapse">
+              <thead>
+                <tr className="border-b">
+                  <td className="px-6 py-2.5 text-left text-sm text-[#858D9D]">
+                    Asset
+                  </td>
+                  <td className="px-6 py-2.5 text-right text-sm text-[#858D9D]">
+                    Contextual Risk
+                  </td>
+                </tr>
+              </thead>
+              <tbody>
+                <tr className="border-b">
+                  <td className="flex items-center gap-3 p-2.5">
+                    <div className="w-fit rounded-full bg-[#D7EAFF] p-3">
+                      <Server className="stroke-[#1873DE]" />
+                    </div>
+                    <div>
+                      <p className="text-sm font-semibold text-[#525D73]">
+                        Loremipsumdolorsit
+                      </p>
+                      <p className="text-xs font-semibold text-[#667085]">
+                        192.168.1.1
+                      </p>
+                    </div>
+                  </td>
+                  <td className="p-2.5">
+                    <div className="mx-auto w-fit rounded-full bg-[#FFE2E0] px-4 py-1">
+                      <p className="text-center text-base font-bold text-[#C6190D]">
+                        Critical
+                      </p>
+                    </div>
+                  </td>
+                </tr>
+                <tr className="border-b">
+                  <td className="flex items-center gap-3 p-2.5">
+                    <div className="w-fit rounded-full bg-[#D7EAFF] p-3">
+                      <Server className="stroke-[#1873DE]" />
+                    </div>
+                    <div>
+                      <p className="text-sm font-semibold text-[#525D73]">
+                        Loremipsumdolorsit
+                      </p>
+                      <p className="text-xs font-semibold text-[#667085]">
+                        192.168.1.1
+                      </p>
+                    </div>
+                  </td>
+                  <td className="p-2.5">
+                    <div className="mx-auto w-fit rounded-full bg-[#FFE2E0] px-4 py-1">
+                      <p className="text-center text-base font-bold text-[#C6190D]">
+                        Critical
+                      </p>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
           <div></div>
         </div>
       </div>

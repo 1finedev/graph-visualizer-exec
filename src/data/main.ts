@@ -45,3 +45,8 @@ export const SECTION_COLS_DATA = [
     className: "text-[#525D73]",
   },
 ];
+
+export const ASSETS = [
+  { name: "Loremipsumdolorsit", ip: "192.168.1.1", risk: "Critical" },
+  { name: "Loremipsumdolorsit002", ip: "192.168.1.2", risk: "Critical" },
+];
