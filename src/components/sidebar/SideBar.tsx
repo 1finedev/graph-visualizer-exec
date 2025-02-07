@@ -39,6 +39,13 @@ const SideBar = ({ isOpen, toggleIsOpen }: SideBarProps) => {
         </span>{" "}
         <TooltipProvider delayDuration={100}>
           <div>
+            <Image
+              src={isOpen ? "/logo.png" : "/logo-only.png"}
+              width={isOpen ? 155 : 45}
+              height={isOpen ? 30 : 45}
+              alt="logo"
+              className="mb-7"
+            />
             {NAV_LINKS.map((item) => (
               <Link key={item.id} href={item.pageUrl}>
                 <div
@@ -106,10 +113,10 @@ const SideBar = ({ isOpen, toggleIsOpen }: SideBarProps) => {
             ))}
 
             <hr className="my-5" />
-            <div className="flex items-center justify-between px-3 py-2.5">
+            <div className="flex items-center justify-between">
               {isOpen && (
-                <div className="hidden gap-3 md:flex">
-                  <Image src="/avatar.jpeg" width={48} height={48} alt="" />
+                <div className="hidden gap-3 md:flex md:items-center">
+                  <Image src="/avatar.jpeg" width={60} height={60} alt="" />
                   <div>
                     <p className="text-base">Lorem</p>
                     <p className="text-base">Lorem</p>
