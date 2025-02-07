@@ -3,7 +3,7 @@ import FlowChart from "@/components/flowchart";
 import Collapsible from "@/components/ui/collapsible";
 import InfoBlock from "@/components/ui/InfoBlock";
 import { SECTION_COLS_DATA } from "@/data/main";
-import { Server } from "lucide-react";
+import { ChevronLeft, ChevronRight, Server } from "lucide-react";
 import { Fragment } from "react";
 
 export default function HomePage() {
@@ -117,8 +117,13 @@ export default function HomePage() {
                 </tr>
               </tbody>
             </table>
+            <div className="mt-3 flex items-center justify-center gap-2.5">
+              <ChevronLeft className="stroke-[#C2C6CE]" />
+              <p className="text-center text-[#667085]">Showing 1-2 of 2</p>
+              <ChevronRight className="stroke-[#858D9D]" />
+            </div>
           </div>
-          <div className="rounded-xl border px-7 py-2.5">
+          <div className="rounded-xl border px-7 py-2.5 shadow">
             <h3 className="mb-4 text-lg font-medium text-[#667085]">
               Contextual Risk
             </h3>
