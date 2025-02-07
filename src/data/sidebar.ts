@@ -2,7 +2,7 @@ import {
   Cuboid,
   FileText,
   LayoutDashboard,
-  LogOut,
+  MonitorCog,
   Settings,
   Shrink,
   TriangleAlert,
@@ -76,7 +76,7 @@ export const NAV_LINKS_BASE = [
   },
   {
     id: 9,
-    icon: LogOut,
+    icon: MonitorCog,
     label: "Lorem",
     pageUrl: "/",
     className: "stroke-0.5 stroke-white",

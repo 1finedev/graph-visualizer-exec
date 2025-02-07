@@ -7,7 +7,8 @@ import {
   TooltipProvider,
   TooltipTrigger,
 } from "@radix-ui/react-tooltip";
-import { ChevronLeft, ChevronRight } from "lucide-react";
+import { ChevronLeft, ChevronRight, LogOut } from "lucide-react";
+import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 
@@ -103,6 +104,18 @@ const SideBar = ({ isOpen, toggleIsOpen }: SideBarProps) => {
                 </div>
               </Link>
             ))}
+
+            <hr className="my-5" />
+            <div className="flex items-center justify-between">
+              <div className="flex gap-3">
+                <Image src="/avatar.jpeg" width={48} height={48} alt="" />
+                <div>
+                  <p className="text-base">Lorem</p>
+                  <p className="text-base">Lorem</p>
+                </div>
+              </div>
+              <LogOut />
+            </div>
           </div>
         </TooltipProvider>
       </nav>
