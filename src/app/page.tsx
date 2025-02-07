@@ -45,12 +45,21 @@ export default function HomePage() {
           description="Lorem ipsum dolor sit amet consectetur. In laoreet elementum luctus odio. Id enim urna."
         />
       </div>
-      <div className="flex-1">
-        <h3 className="mb-3 text-xl font-bold text-[#02983E]">
+      <div className="h-fit flex-1 rounded-2xl bg-white px-[30px] py-5">
+        <h3 className="mb-5 text-xl font-bold text-[#02983E]">
           Lorem Lorem Lorem
         </h3>
 
         <FlowChart />
+
+        <h3 className="my-5 text-xl font-bold text-[#02983E]">
+          Lorem ipsum dolor sit{" "}
+        </h3>
+
+        <div className="flex justify-between">
+          <div className="rounded-[15px] border border-[#F0F1F3] shadow-md"></div>
+          <div></div>
+        </div>
       </div>
     </div>
   );
