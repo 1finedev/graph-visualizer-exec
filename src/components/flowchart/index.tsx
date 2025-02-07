@@ -1,7 +1,7 @@
 import {
-  addEdge,
   BaseEdge,
   Connection,
+  EdgeProps,
   getStraightPath,
   Node,
   NodeProps,
@@ -143,7 +143,7 @@ const initialEdges = [
   { id: "0->1", source: "1", target: "2", label: "to the", type: "step" },
 ];
 
-const CustomEdge = ({ id, sourceX, sourceY, targetX, targetY }) => {
+const CustomEdge = ({ id, sourceX, sourceY, targetX, targetY }: EdgeProps) => {
   const [edgePath] = getStraightPath({
     sourceX,
     sourceY,
@@ -163,8 +163,13 @@ function FlowChart() {
 
   const onConnect = useCallback(
     (connection: Connection) => {
-      const edge = { ...connection, type: "custom-edge" };
-      setEdges((eds) => addEdge(edge, eds));
+      const edge = {
+        ...connection,
+        type: "custom-edge",
+        label: "",
+        id: `${connection.source}->${connection.target}`,
+      };
+      setEdges((eds) => [...eds, edge]);
     },
     [setEdges],
   );
