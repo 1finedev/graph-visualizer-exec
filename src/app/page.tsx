@@ -118,7 +118,31 @@ export default function HomePage() {
               </tbody>
             </table>
           </div>
-          <div></div>
+          <div className="rounded-xl border px-7 py-2.5">
+            <h3 className="mb-4 text-lg font-medium text-[#667085]">
+              Contextual Risk
+            </h3>
+            <div className="flex justify-center gap-12">
+              <ul className="flex list-disc flex-col justify-between py-2 pl-5">
+                <li className="text-base marker:text-[#E5372B]">
+                  <span className="font-bold">2</span> Critical
+                </li>
+                <li className="text-base marker:text-[#E5372B]">
+                  <span className="font-bold">0</span> High
+                </li>
+                <li className="text-base marker:text-[#E5372B]">
+                  <span className="font-bold">0</span> Medium
+                </li>
+                <li className="text-base marker:text-[#E5372B]">
+                  <span className="font-bold">0</span> Low
+                </li>
+              </ul>
+
+              <div className="flex h-[10vw] w-[10vw] items-center justify-center rounded-full border-8 border-[#C6190D]">
+                <span className="text-4xl font-semibold text-[#656575]">2</span>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
