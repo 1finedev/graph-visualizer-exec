@@ -1,8 +1,7 @@
-import SideBar from "@/components/sidebar/SideBar";
+import MainLayout from "@/layouts/MainLayout";
 import "@/styles/globals.css";
-
-import { GeistSans } from "geist/font/sans";
 import { type Metadata } from "next";
+import { Public_Sans } from "next/font/google";
 
 export const metadata: Metadata = {
   title: "Graph Visualizer",
@@ -10,16 +9,18 @@ export const metadata: Metadata = {
   icons: [{ rel: "icon", url: "/favicon.ico" }],
 };
 
+const publicSans = Public_Sans({
+  subsets: ["latin"],
+  display: "swap",
+});
+
 export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en" className={`${GeistSans.variable}`}>
-      <body className="h-screen w-full bg-background">
-        <SideBar />
-        <main className="ml-auto w-[calc(100%-17vw)] px-9 py-7">
-          {children}
-        </main>
+    <html lang="en" className={`${publicSans.className}`}>
+      <body className="h-screen w-full">
+        <MainLayout>{children}</MainLayout>
       </body>
     </html>
   );

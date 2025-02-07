@@ -7,6 +7,26 @@ export default {
   content: ["./src/**/*.tsx"],
   theme: {
     extend: {
+      fontSize: {
+        base: [
+          "15px",
+          {
+            lineHeight: "22px",
+          },
+        ],
+        xs: [
+          "12px",
+          {
+            lineHeight: "21px",
+          },
+        ],
+        xl: [
+          "20px",
+          {
+            lineHeight: "22px",
+          },
+        ],
+      },
       fontFamily: {
         sans: ["var(--font-geist-sans)", ...fontFamily.sans],
       },

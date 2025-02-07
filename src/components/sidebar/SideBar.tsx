@@ -1,40 +1,110 @@
 "use client";
 
-import { NAV_LINKS } from "@/data/sidebar";
+import { NAV_LINKS, NAV_LINKS_BASE } from "@/data/sidebar";
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from "@radix-ui/react-tooltip";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import Link from "next/link";
 import { useState } from "react";
 
-const SideBar = () => {
-  const [showLabels, setShowLabels] = useState(true);
+interface SideBarProps {
+  isOpen: boolean;
+  toggleIsOpen: () => void;
+}
+
+const SideBar = ({ isOpen, toggleIsOpen }: SideBarProps) => {
+  const [currentPage, setCurrentPage] = useState(1); // use the id to track just to simulate the select
 
   return (
-    <div className="shadow-sidebar fixed min-h-screen w-[17vw] max-w-[17vw] rounded-br-xl rounded-tr-xl bg-white px-4 py-7">
-      <nav className="relative">
+    <div
+      className={`shadow-sidebar fixed min-h-screen ${
+        isOpen ? "w-[17vw]" : "w-[5vw]"
+      } flex max-w-[17vw] flex-col rounded-br-xl rounded-tr-xl bg-white px-4 py-7 transition-all duration-300`}
+    >
+      <nav className="relative flex flex-1 flex-col justify-between">
         <span
-          onClick={() => setShowLabels((prev) => !prev)}
-          className="shadow-sidebar-collapse absolute -right-8 top-0 flex h-8 w-8 cursor-pointer items-center justify-center rounded-full border-[3px] border-[#F0F1F3] bg-green-700"
+          onClick={toggleIsOpen}
+          className="shadow-sidebar-collapse absolute -right-8 top-0 hidden h-8 w-8 cursor-pointer items-center justify-center rounded-full border-[3px] border-[#F0F1F3] bg-green-700 md:flex"
         >
-          {showLabels ? (
+          {isOpen ? (
             <ChevronLeft className="stroke-white" />
           ) : (
             <ChevronRight className="stroke-white" />
           )}
-        </span>
-        {NAV_LINKS.map((item) => (
-          <Link key={item.id} href={item.pageUrl}>
-            <div className="mb-1.5 flex items-center gap-2 rounded-lg px-3 py-2.5">
-              <span className="m-[1px] flex-shrink-0">
-                <item.icon className="stroke-0.5 h-5 w-5 border-0 fill-[#A3A9B6] stroke-white" />
-              </span>
-              {showLabels && (
-                <span className="hidden flex-shrink-0 text-base md:inline-block">
-                  {item.label}
-                </span>
-              )}
-            </div>
-          </Link>
-        ))}
+        </span>{" "}
+        <TooltipProvider delayDuration={100}>
+          <div>
+            {NAV_LINKS.map((item) => (
+              <Link key={item.id} href={item.pageUrl}>
+                <div
+                  onClick={() => setCurrentPage(item.id)}
+                  className={`${currentPage === item.id && "bg-[#E9FAF0]"} mb-1.5 flex items-center gap-2 rounded-lg px-3 py-2.5`}
+                >
+                  <Tooltip>
+                    <TooltipTrigger className="m-[1px] flex-shrink-0" asChild>
+                      <item.icon
+                        className={`fill-[#A3A9B6] ${item.className} ${
+                          currentPage === item.id &&
+                          `${item.selected ? "stroke-white" : "stroke-black"} fill-black`
+                        }`}
+                      />
+                    </TooltipTrigger>
+                    <TooltipContent
+                      className={`text-base ${isOpen && "hidden"}`}
+                      side="right"
+                      sideOffset={20}
+                    >
+                      {item.label}
+                    </TooltipContent>
+                    {isOpen && (
+                      <p className="hidden flex-shrink-0 text-base text-[#525D73] md:inline-block">
+                        {item.label}
+                      </p>
+                    )}
+                  </Tooltip>
+                </div>
+              </Link>
+            ))}
+          </div>
+
+          <div>
+            {NAV_LINKS_BASE.map((item) => (
+              <Link key={item.id} href={item.pageUrl}>
+                <div
+                  onClick={() => setCurrentPage(item.id)}
+                  className={`${currentPage === item.id && "bg-[#E9FAF0]"} mb-1.5 flex items-center gap-2 rounded-lg px-3 py-2.5`}
+                >
+                  <Tooltip>
+                    <TooltipTrigger className="m-[1px] flex-shrink-0" asChild>
+                      <item.icon
+                        className={`fill-[#A3A9B6] ${item.className} ${
+                          currentPage === item.id &&
+                          `${item.selected ? "stroke-white" : "stroke-black"} fill-black`
+                        }`}
+                      />
+                    </TooltipTrigger>
+                    <TooltipContent
+                      className={`text-base ${isOpen && "hidden"}`}
+                      side="right"
+                      sideOffset={20}
+                    >
+                      {item.label}
+                    </TooltipContent>
+                    {isOpen && (
+                      <p className="hidden flex-shrink-0 text-base text-[#525D73] md:inline-block">
+                        {item.label}
+                      </p>
+                    )}
+                  </Tooltip>
+                </div>
+              </Link>
+            ))}
+          </div>
+        </TooltipProvider>
       </nav>
     </div>
   );
