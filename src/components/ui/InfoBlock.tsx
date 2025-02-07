@@ -1,3 +1,4 @@
+"use client";
 interface TitleTextProps {
   title: string;
   text: string;

@@ -3,7 +3,7 @@
 import SideBar from "@/components/sidebar/SideBar";
 import { useState } from "react";
 
-const MainLayout = ({ children }: Readonly<{ children: React.ReactNode }>) => {
+const MainLayout = ({ children }: { children: React.ReactNode }) => {
   const [isOpen, setIsOpen] = useState(true);
   const toggleIsOpen = () => setIsOpen((prev) => !prev);
   return (

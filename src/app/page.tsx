@@ -57,7 +57,7 @@ export default function HomePage() {
           Lorem ipsum dolor sit{" "}
         </h3>
 
-        <div className="flex justify-between">
+        <div className="flex gap-5">
           <div className="overflow-hidden rounded-xl border shadow">
             <table className="w-full table-auto border-collapse">
               <thead>
