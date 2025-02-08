@@ -1,149 +1,24 @@
 "use client";
 
 import {
+  type Connection,
+  type EdgeProps,
   BaseEdge,
-  Connection,
-  EdgeProps,
   getStraightPath,
-  Node,
-  NodeProps,
   ReactFlow,
   useEdgesState,
   useNodesState,
 } from "@xyflow/react";
 
+import { initialEdges, initialNodes } from "@/data/chart";
 import "@xyflow/react/dist/style.css";
-import {
-  type LucideIcon,
-  Server,
-  ShieldX,
-  Users,
-  VenetianMask,
-} from "lucide-react";
+import { ShieldX } from "lucide-react";
 import { useCallback } from "react";
-
-type CustomData = {
-  icon: LucideIcon;
-  subText?: string;
-  iconColor: string;
-  background: string;
-  text: string;
-  meta: {
-    icon: LucideIcon;
-    iconColor: string;
-    background: string;
-  };
-};
-
-type CustomNode = Node<CustomData, "custom">;
-
-const CustomNode = ({ data }: NodeProps<CustomNode>) => {
-  return (
-    <div
-      className={`rounded-full ${data.background} relative mx-10 flex items-center justify-center p-3`}
-    >
-      {data?.meta && (
-        <div
-          className={`${data.meta.background} absolute -top-1 right-0 flex items-center justify-center rounded-full border border-white p-1`}
-        >
-          <data.meta.icon className={`${data.meta.iconColor} h-2.5 w-2.5`} />
-        </div>
-      )}
-      <data.icon className={`${data.iconColor} h-6 w-6`} />
-      <p className="absolute -bottom-5 text-sm font-semibold text-secondary">
-        {data.text}
-      </p>
-      {data.subText && (
-        <p className="text-secondary-muted absolute -bottom-10 text-xs font-semibold">
-          {data.subText}
-        </p>
-      )}
-    </div>
-  );
-};
+import CustomNode from "./custom-node";
 
 const nodeTypes = {
   custom: CustomNode,
 };
-
-const initialNodes = [
-  {
-    id: "0",
-    type: "custom",
-    position: { x: 100, y: 100 },
-    data: {
-      text: "Loremipsumm",
-      icon: VenetianMask,
-      iconColor: "stroke-brand-red",
-      background: "bg-[#FFF1F0]",
-      meta: {
-        icon: Users,
-        iconColor: "stroke-[#FFFFFF]",
-        background: "bg-[#7A44FF]",
-      },
-    },
-  },
-  {
-    id: "1",
-    type: "custom",
-    position: { x: 250, y: 100 },
-    data: {
-      text: "Loremipsu",
-      icon: Server,
-      iconColor: "stroke-[#1873DE]",
-      background: "bg-brand-blue-faded",
-    },
-  },
-  {
-    id: "2",
-    type: "custom",
-    position: { x: 400, y: 100 },
-    data: {
-      text: "Loremipsumm",
-      icon: Server,
-      iconColor: "stroke-[#1873DE]",
-      background: "bg-brand-blue-faded",
-    },
-  },
-  {
-    id: "3",
-    type: "custom",
-    position: { x: 650, y: 0 },
-    data: {
-      text: "Loremipsumdolorsit",
-      subText: "192.168.1.1",
-      icon: Server,
-      iconColor: "stroke-[#1873DE]",
-      background: "bg-brand-blue-faded",
-      meta: {
-        icon: ShieldX,
-        iconColor: "stroke-[#FFFFFF]",
-        background: "bg-brand-red",
-      },
-    },
-  },
-  {
-    id: "4",
-    type: "custom",
-    position: { x: 650, y: 200 },
-    data: {
-      text: "Loremipsumdolorsit002",
-      subText: "192.168.1.2",
-      icon: Server,
-      iconColor: "stroke-[#1873DE]",
-      background: "bg-brand-blue-faded",
-      meta: {
-        icon: ShieldX,
-        iconColor: "stroke-[#FFFFFF]",
-        background: "bg-brand-red",
-      },
-    },
-  },
-];
-
-const initialEdges = [
-  { id: "0->1", source: "1", target: "2", label: "to the", type: "step" },
-];
 
 const CustomEdge = ({ id, sourceX, sourceY, targetX, targetY }: EdgeProps) => {
   const [edgePath] = getStraightPath({
