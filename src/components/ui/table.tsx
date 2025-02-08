@@ -73,7 +73,7 @@ const Table = () => {
         <h3 className="mb-4 text-lg font-medium text-secondary-muted">
           Contextual Risk
         </h3>
-        <div className="mb-5 lg:flex lg:justify-center lg:gap-12">
+        <div className="mb-5 flex items-center justify-between lg:gap-12">
           <ul className="flex list-disc flex-col justify-between py-2 pl-5">
             <li className="text-base marker:text-brand-red">
               <span className="font-bold">2</span> Critical
@@ -89,8 +89,10 @@ const Table = () => {
             </li>
           </ul>
 
-          <div className="flex h-[10vw] w-[10vw] items-center justify-center rounded-full border-8 border-[#C6190D]">
-            <span className="text-4xl font-semibold text-[#656575]">2</span>
+          <div className="flex h-[25vw] w-[25vw] items-center justify-center rounded-full border-8 border-[#C6190D] lg:h-[10vw] lg:w-[10vw] lg:border-8">
+            <span className="text-3xl font-semibold text-[#656575] lg:text-4xl">
+              2
+            </span>
           </div>
         </div>
       </div>
