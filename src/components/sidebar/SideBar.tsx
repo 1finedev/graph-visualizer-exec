@@ -107,7 +107,9 @@ const SideBar = ({ isOpen, toggleIsOpen }: SideBarProps) => {
                 </div>
               </div>
             )}
-            <IconLogout />
+            <div className="px-3 md:px-0">
+              <IconLogout />
+            </div>
           </div>
         </div>
       </nav>
