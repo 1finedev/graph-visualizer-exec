@@ -15,7 +15,7 @@ const nodeTypes = {
 function FlowChart() {
   const [nodes] = useState(initialNodes);
   const [edges] = useState(initialEdges);
-  const [selectedNode, setSelectedNode] = useState<TCustomNode | null>();
+  const [selectedNode, setSelectedNode] = useState<TCustomNode | null>(null);
 
   return (
     <div className="rounded-2xl bg-[#FAFAFA] p-4">
