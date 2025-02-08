@@ -6,15 +6,10 @@ import { initialEdges, initialNodes } from "@/data/chart";
 import "@xyflow/react/dist/style.css";
 import { IconShieldX } from "public/svg";
 import { useState } from "react";
-import CustomEdge from "./custom-edge";
 import CustomNode from "./custom-node";
 
 const nodeTypes = {
   custom: CustomNode,
-};
-
-const edgeTypes = {
-  "custom-edge": CustomEdge,
 };
 
 function FlowChart() {
@@ -28,7 +23,6 @@ function FlowChart() {
           nodes={nodes}
           nodeTypes={nodeTypes}
           edges={edges}
-          edgeTypes={edgeTypes}
           fitView
           attributionPosition="top-right"
         />

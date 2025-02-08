@@ -20,16 +20,13 @@ export const initialNodes = [
     position: { x: 100, y: 100 },
     data: {
       id: "0",
-
       overlay: OverlayZero,
       handles: [{ type: "source", position: "right", id: 0 }],
       text: "Loremipsumm",
       icon: IconVenetianMask,
-      iconColor: "stroke-brand-red",
       background: "bg-[#FFF1F0]",
       meta: {
         icon: IconGroup,
-        iconColor: "stroke-[#FFFFFF]",
         background: "bg-[#7A44FF]",
       },
     },
@@ -40,7 +37,6 @@ export const initialNodes = [
     position: { x: 250, y: 100 },
     data: {
       id: "1",
-
       overlay: OverlayOne,
       handles: [
         { type: "target", position: "left", id: 0 },
@@ -78,7 +74,6 @@ export const initialNodes = [
       text: "Loremipsumdolorsit",
       subText: "192.168.1.1",
       icon: IconServer,
-      iconColor: "stroke-[#1873DE]",
       background: "bg-brand-blue-faded",
       meta: {
         icon: IconShieldX,
