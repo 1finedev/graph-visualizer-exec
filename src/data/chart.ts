@@ -1,4 +1,3 @@
-import { DerivedEdges } from "@/components/flowchart/custom-edge";
 import {
   IconGroup,
   IconServer,
@@ -10,9 +9,9 @@ export const initialNodes = [
   {
     id: "0",
     type: "custom",
-    sourcePosition: "right",
     position: { x: 100, y: 100 },
     data: {
+      handles: [{ type: "source", position: "right", id: 0 }],
       text: "Loremipsumm",
       icon: IconVenetianMask,
       iconColor: "stroke-brand-red",
@@ -27,9 +26,12 @@ export const initialNodes = [
   {
     id: "1",
     type: "custom",
-    sourcePosition: "right",
     position: { x: 250, y: 100 },
     data: {
+      handles: [
+        { type: "target", position: "left", id: 0 },
+        { type: "source", position: "right", id: 1 },
+      ],
       text: "Loremipsu",
       icon: IconServer,
       background: "bg-brand-blue-faded",
@@ -38,9 +40,12 @@ export const initialNodes = [
   {
     id: "2",
     type: "custom",
-    sourcePosition: "right",
     position: { x: 400, y: 100 },
     data: {
+      handles: [
+        { type: "target", position: "left", id: 0 },
+        { type: "source", position: "right", id: 1 },
+      ],
       text: "Loremipsumm",
       icon: IconServer,
       background: "bg-brand-blue-faded",
@@ -49,9 +54,9 @@ export const initialNodes = [
   {
     id: "3",
     type: "custom",
-    sourcePosition: "left",
     position: { x: 650, y: 0 },
     data: {
+      handles: [{ type: "target", position: "left", id: 0 }],
       text: "Loremipsumdolorsit",
       subText: "192.168.1.1",
       icon: IconServer,
@@ -66,9 +71,9 @@ export const initialNodes = [
   {
     id: "4",
     type: "custom",
-    sourcePosition: "left",
     position: { x: 650, y: 200 },
     data: {
+      handles: [{ type: "target", position: "left", id: 0 }],
       text: "Loremipsumdolorsit002",
       subText: "192.168.1.2",
       icon: IconServer,
@@ -82,29 +87,9 @@ export const initialNodes = [
   },
 ];
 
-const derivedEdges: DerivedEdges[] = [];
-
-initialNodes.map((node) => {
-  if (Number(node.id) < 3) {
-    const nextNode = initialNodes[Number(node.id) + 1];
-
-    if (!nextNode) return;
-
-    const {
-      id,
-      position: { x, y },
-    } = nextNode;
-
-    if (!id || !x || !y) return;
-
-    derivedEdges.push({
-      id: `${node.id}->${id}`,
-      sourceX: node.position.x,
-      sourceY: node.position.x,
-      targetX: x,
-      targetY: y,
-    });
-  }
-});
-
-export const initialEdges = [...derivedEdges];
+export const initialEdges = [
+  { id: "0-1", source: "0", target: "1" },
+  { id: "1-2", source: "1", target: "2" },
+  { id: "2-3", source: "2", target: "3" },
+  { id: "2-4", source: "2", target: "4" },
+];

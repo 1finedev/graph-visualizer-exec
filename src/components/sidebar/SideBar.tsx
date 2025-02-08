@@ -38,15 +38,15 @@ const SideBar = ({ isOpen, toggleIsOpen }: SideBarProps) => {
             <ChevronRight className="stroke-white" />
           )}
         </span>{" "}
-        <TooltipProvider delayDuration={100}>
-          <div>
-            <div className="mb-8 flex items-center gap-2 px-3">
-              <div>
-                <AsteliaLogo />
-              </div>
-              {isOpen && <AsteliaLogoText />}
-            </div>
+        <div>
+          <div className="mb-8 flex items-center gap-2 px-3">
             <div>
+              <AsteliaLogo />
+            </div>
+            {isOpen && <AsteliaLogoText />}
+          </div>
+          <div>
+            <TooltipProvider delayDuration={100}>
               {NAV_LINKS.map((item) => (
                 <Link key={item.id} href={item.pageUrl}>
                   <div
@@ -54,15 +54,15 @@ const SideBar = ({ isOpen, toggleIsOpen }: SideBarProps) => {
                     className={`${currentPage === item.id && "bg-accent"} ${!isOpen && "w-fit"} mb-1.5 flex items-center gap-2 rounded-lg px-3 py-2.5`}
                   >
                     <Tooltip>
-                      <TooltipTrigger asChild>
+                      <TooltipTrigger>
                         <item.icon hovered={currentPage === item.id} />
                       </TooltipTrigger>
                       <TooltipContent
-                        className={`text-base ${isOpen && "hidden"}`}
+                        className={`rounded-full bg-accent px-4 text-base font-medium ${isOpen && "hidden"}`}
                         side="right"
                         sideOffset={20}
                       >
-                        {item.label}
+                        {item.label}{" "}
                       </TooltipContent>
                       {isOpen && (
                         <p className="hidden flex-shrink-0 text-base text-secondary md:inline-block">
@@ -73,51 +73,41 @@ const SideBar = ({ isOpen, toggleIsOpen }: SideBarProps) => {
                   </div>
                 </Link>
               ))}
-            </div>
+            </TooltipProvider>
           </div>
-          <div>
-            {NAV_LINKS_BASE.map((item) => (
-              <Link key={item.id} href={item.pageUrl}>
-                <div
-                  onClick={() => setCurrentPage(item.id)}
-                  className={`${currentPage === item.id && "bg-accent"} mb-1.5 flex items-center gap-2 rounded-lg px-3 py-2.5`}
-                >
-                  <Tooltip>
-                    <TooltipTrigger className="m-[1px] flex-shrink-0" asChild>
-                      <item.icon hovered={currentPage === item.id} />
-                    </TooltipTrigger>
-                    <TooltipContent
-                      className={`text-base ${isOpen && "hidden"}`}
-                      side="right"
-                      sideOffset={20}
-                    >
-                      {item.label}
-                    </TooltipContent>
-                    {isOpen && (
-                      <p className="hidden flex-shrink-0 text-base text-secondary md:inline-block">
-                        {item.label}
-                      </p>
-                    )}
-                  </Tooltip>
-                </div>
-              </Link>
-            ))}
+        </div>
+        <div>
+          {NAV_LINKS_BASE.map((item) => (
+            <Link key={item.id} href={item.pageUrl}>
+              <div
+                onClick={() => setCurrentPage(item.id)}
+                className={`${currentPage === item.id && "bg-accent"} mb-1.5 flex items-center gap-2 rounded-lg px-3 py-2.5`}
+              >
+                <item.icon hovered={currentPage === item.id} />
 
-            <hr className="my-5" />
-            <div className="flex cursor-pointer items-center justify-between">
-              {isOpen && (
-                <div className="hidden gap-3 md:flex md:items-center">
-                  <Image src="/avatar.jpeg" width={60} height={60} alt="" />
-                  <div>
-                    <p className="text-base">Lorem</p>
-                    <p className="text-base">Lorem</p>
-                  </div>
+                {isOpen && (
+                  <p className="hidden flex-shrink-0 text-base text-secondary md:inline-block">
+                    {item.label}
+                  </p>
+                )}
+              </div>
+            </Link>
+          ))}
+
+          <hr className="my-5" />
+          <div className="flex cursor-pointer items-center justify-between">
+            {isOpen && (
+              <div className="hidden gap-3 md:flex md:items-center">
+                <Image src="/avatar.jpeg" width={60} height={60} alt="" />
+                <div>
+                  <p className="text-base">Lorem</p>
+                  <p className="text-base">Lorem</p>
                 </div>
-              )}
-              <IconLogout />
-            </div>
+              </div>
+            )}
+            <IconLogout />
           </div>
-        </TooltipProvider>
+        </div>
       </nav>
     </div>
   );

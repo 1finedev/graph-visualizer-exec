@@ -1,16 +1,11 @@
 "use client";
 
-import {
-  addEdge,
-  applyEdgeChanges,
-  applyNodeChanges,
-  ReactFlow,
-} from "@xyflow/react";
+import { ReactFlow } from "@xyflow/react";
 
-import { initialNodes } from "@/data/chart";
+import { initialEdges, initialNodes } from "@/data/chart";
 import "@xyflow/react/dist/style.css";
 import { IconShieldX } from "public/svg";
-import { useCallback, useState } from "react";
+import { useState } from "react";
 import CustomEdge from "./custom-edge";
 import CustomNode from "./custom-node";
 
@@ -22,29 +17,9 @@ const edgeTypes = {
   "custom-edge": CustomEdge,
 };
 
-export const initialEdges = [
-  { id: "0-1", source: "0", target: "1" },
-  { id: "1-2", source: "1", target: "2" },
-  { id: "2-3", source: "2", target: "3" },
-  { id: "2-4", source: "2", target: "4" },
-];
-
 function FlowChart() {
   const [nodes, setNodes] = useState(initialNodes);
   const [edges, setEdges] = useState(initialEdges);
-
-  const onNodesChange = useCallback(
-    (changes) => setNodes((nds) => applyNodeChanges(changes, nds)),
-    [setNodes],
-  );
-  const onEdgesChange = useCallback(
-    (changes) => setEdges((eds) => applyEdgeChanges(changes, eds)),
-    [setEdges],
-  );
-  const onConnect = useCallback(
-    (connection) => setEdges((eds) => addEdge(connection, eds)),
-    [setEdges],
-  );
 
   return (
     <div className="rounded-2xl bg-[#FAFAFA] p-4">
@@ -53,9 +28,6 @@ function FlowChart() {
           nodes={nodes}
           nodeTypes={nodeTypes}
           edges={edges}
-          onNodesChange={onNodesChange}
-          onEdgesChange={onEdgesChange}
-          onConnect={onConnect}
           edgeTypes={edgeTypes}
           fitView
           attributionPosition="top-right"
