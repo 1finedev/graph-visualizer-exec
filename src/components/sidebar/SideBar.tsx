@@ -4,7 +4,6 @@ import { NAV_LINKS, NAV_LINKS_BASE } from "@/data/sidebar";
 import {
   Tooltip,
   TooltipContent,
-  TooltipProvider,
   TooltipTrigger,
 } from "@radix-ui/react-tooltip";
 import { ChevronLeft, ChevronRight } from "lucide-react";
@@ -46,34 +45,32 @@ const SideBar = ({ isOpen, toggleIsOpen }: SideBarProps) => {
             {isOpen && <AsteliaLogoText />}
           </div>
           <div>
-            <TooltipProvider delayDuration={100}>
-              {NAV_LINKS.map((item) => (
-                <Link key={item.id} href={item.pageUrl}>
-                  <div
-                    onClick={() => setCurrentPage(item.id)}
-                    className={`${currentPage === item.id && "bg-accent"} ${!isOpen && "w-fit"} mb-1.5 flex items-center gap-2 rounded-lg px-3 py-2.5`}
-                  >
-                    <Tooltip>
-                      <TooltipTrigger>
-                        <item.icon hovered={currentPage === item.id} />
-                      </TooltipTrigger>
-                      <TooltipContent
-                        className={`rounded-full bg-accent px-4 text-base font-medium ${isOpen && "hidden"}`}
-                        side="right"
-                        sideOffset={20}
-                      >
-                        {item.label}{" "}
-                      </TooltipContent>
-                      {isOpen && (
-                        <p className="hidden flex-shrink-0 text-base text-secondary md:inline-block">
-                          {item.label}
-                        </p>
-                      )}
-                    </Tooltip>
-                  </div>
-                </Link>
-              ))}
-            </TooltipProvider>
+            {NAV_LINKS.map((item) => (
+              <Link key={item.id} href={item.pageUrl}>
+                <div
+                  onClick={() => setCurrentPage(item.id)}
+                  className={`${currentPage === item.id && "bg-accent"} ${!isOpen && "w-fit"} mb-1.5 flex items-center gap-2 rounded-lg px-3 py-2.5`}
+                >
+                  <Tooltip>
+                    <TooltipTrigger>
+                      <item.icon hovered={currentPage === item.id} />
+                    </TooltipTrigger>
+                    <TooltipContent
+                      className={`rounded-full bg-accent px-4 text-base font-medium ${isOpen && "hidden"}`}
+                      side="right"
+                      sideOffset={20}
+                    >
+                      {item.label}{" "}
+                    </TooltipContent>
+                    {isOpen && (
+                      <p className="hidden flex-shrink-0 text-base text-secondary md:inline-block">
+                        {item.label}
+                      </p>
+                    )}
+                  </Tooltip>
+                </div>
+              </Link>
+            ))}
           </div>
         </div>
         <div>

@@ -1,3 +1,8 @@
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipTrigger,
+} from "@radix-ui/react-tooltip";
 import { Handle, Position, type Node, type NodeProps } from "@xyflow/react";
 import { type LucideIcon } from "lucide-react";
 
@@ -36,7 +41,6 @@ const CustomNode = ({ data }: NodeProps<CustomNode>) => {
           onConnect={(params) => console.log("handle onConnect", params)}
         />
       ))}
-
       {data?.meta && (
         <div
           className={`${data.meta.background} absolute -right-2 -top-3 flex items-center justify-center rounded-full border border-white p-1`}
@@ -44,16 +48,29 @@ const CustomNode = ({ data }: NodeProps<CustomNode>) => {
           <data.meta.icon />
         </div>
       )}
-      <data.icon />
 
-      <p className="absolute -bottom-5 text-sm font-semibold text-secondary">
-        {data.text}
-      </p>
-      {data.subText && (
-        <p className="absolute -bottom-10 text-xs font-semibold text-secondary-muted">
-          {data.subText}
-        </p>
-      )}
+      <Tooltip>
+        <TooltipTrigger>
+          <div className="cursor-pointer">
+            <data.icon />
+            <p className="absolute -bottom-5 text-sm font-semibold text-secondary">
+              {data.text}
+            </p>
+            {data.subText && (
+              <p className="absolute -bottom-10 text-xs font-semibold text-secondary-muted">
+                {data.subText}
+              </p>
+            )}
+          </div>
+        </TooltipTrigger>
+        <TooltipContent
+          // className={`rounded-full bg-accent px-4 text-base font-medium ${isOpen && "hidden"}`}
+          // side="right"
+          sideOffset={20}
+        >
+          hello world
+        </TooltipContent>
+      </Tooltip>
     </div>
   );
 };

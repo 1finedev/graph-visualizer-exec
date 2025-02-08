@@ -18,8 +18,8 @@ const edgeTypes = {
 };
 
 function FlowChart() {
-  const [nodes, setNodes] = useState(initialNodes);
-  const [edges, setEdges] = useState(initialEdges);
+  const [nodes] = useState(initialNodes);
+  const [edges] = useState(initialEdges);
 
   return (
     <div className="rounded-2xl bg-[#FAFAFA] p-4">
