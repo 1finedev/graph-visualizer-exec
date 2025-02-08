@@ -1,53 +1,48 @@
 "use client";
 
 import {
-  type Connection,
-  type EdgeProps,
-  BaseEdge,
-  getStraightPath,
+  addEdge,
+  applyEdgeChanges,
+  applyNodeChanges,
   ReactFlow,
-  useEdgesState,
-  useNodesState,
 } from "@xyflow/react";
 
-import { initialEdges, initialNodes } from "@/data/chart";
+import { initialNodes } from "@/data/chart";
 import "@xyflow/react/dist/style.css";
 import { IconShieldX } from "public/svg";
-import { useCallback } from "react";
+import { useCallback, useState } from "react";
+import CustomEdge from "./custom-edge";
 import CustomNode from "./custom-node";
 
 const nodeTypes = {
   custom: CustomNode,
 };
 
-const CustomEdge = ({ id, sourceX, sourceY, targetX, targetY }: EdgeProps) => {
-  const [edgePath] = getStraightPath({
-    sourceX,
-    sourceY,
-    targetX,
-    targetY,
-  });
-
-  return <BaseEdge id={id} path={edgePath} />;
-};
 const edgeTypes = {
   "custom-edge": CustomEdge,
 };
 
-function FlowChart() {
-  const [nodes, setNodes, onNodesChange] = useNodesState(initialNodes);
-  const [edges, setEdges, onEdgesChange] = useEdgesState(initialEdges);
+export const initialEdges = [
+  { id: "0-1", source: "0", target: "1" },
+  { id: "1-2", source: "1", target: "2" },
+  { id: "2-3", source: "2", target: "3" },
+  { id: "2-4", source: "2", target: "4" },
+];
 
+function FlowChart() {
+  const [nodes, setNodes] = useState(initialNodes);
+  const [edges, setEdges] = useState(initialEdges);
+
+  const onNodesChange = useCallback(
+    (changes) => setNodes((nds) => applyNodeChanges(changes, nds)),
+    [setNodes],
+  );
+  const onEdgesChange = useCallback(
+    (changes) => setEdges((eds) => applyEdgeChanges(changes, eds)),
+    [setEdges],
+  );
   const onConnect = useCallback(
-    (connection: Connection) => {
-      const edge = {
-        ...connection,
-        type: "custom-edge",
-        label: "",
-        id: `${connection.source}->${connection.target}`,
-      };
-      setEdges((eds) => [...eds, edge]);
-    },
+    (connection) => setEdges((eds) => addEdge(connection, eds)),
     [setEdges],
   );
 
@@ -63,6 +58,7 @@ function FlowChart() {
           onConnect={onConnect}
           edgeTypes={edgeTypes}
           fitView
+          attributionPosition="top-right"
         />
       </div>
       <hr />

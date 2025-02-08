@@ -1,3 +1,4 @@
+import { DerivedEdges } from "@/components/flowchart/custom-edge";
 import {
   IconGroup,
   IconServer,
@@ -9,6 +10,7 @@ export const initialNodes = [
   {
     id: "0",
     type: "custom",
+    sourcePosition: "right",
     position: { x: 100, y: 100 },
     data: {
       text: "Loremipsumm",
@@ -25,6 +27,7 @@ export const initialNodes = [
   {
     id: "1",
     type: "custom",
+    sourcePosition: "right",
     position: { x: 250, y: 100 },
     data: {
       text: "Loremipsu",
@@ -35,6 +38,7 @@ export const initialNodes = [
   {
     id: "2",
     type: "custom",
+    sourcePosition: "right",
     position: { x: 400, y: 100 },
     data: {
       text: "Loremipsumm",
@@ -45,6 +49,7 @@ export const initialNodes = [
   {
     id: "3",
     type: "custom",
+    sourcePosition: "left",
     position: { x: 650, y: 0 },
     data: {
       text: "Loremipsumdolorsit",
@@ -61,6 +66,7 @@ export const initialNodes = [
   {
     id: "4",
     type: "custom",
+    sourcePosition: "left",
     position: { x: 650, y: 200 },
     data: {
       text: "Loremipsumdolorsit002",
@@ -76,6 +82,29 @@ export const initialNodes = [
   },
 ];
 
-export const initialEdges = [
-  { id: "0->1", source: "1", target: "2", label: "to the", type: "step" },
-];
+const derivedEdges: DerivedEdges[] = [];
+
+initialNodes.map((node) => {
+  if (Number(node.id) < 3) {
+    const nextNode = initialNodes[Number(node.id) + 1];
+
+    if (!nextNode) return;
+
+    const {
+      id,
+      position: { x, y },
+    } = nextNode;
+
+    if (!id || !x || !y) return;
+
+    derivedEdges.push({
+      id: `${node.id}->${id}`,
+      sourceX: node.position.x,
+      sourceY: node.position.x,
+      targetX: x,
+      targetY: y,
+    });
+  }
+});
+
+export const initialEdges = [...derivedEdges];

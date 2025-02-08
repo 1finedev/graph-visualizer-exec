@@ -3,8 +3,8 @@ import FlowChart from "@/components/flowchart";
 import Collapsible from "@/components/ui/collapsible";
 import InfoBlock from "@/components/ui/InfoBlock";
 import { SECTION_COLS_DATA } from "@/data/main";
-import { Table } from "lucide-react";
 import { Fragment } from "react";
+import Table from "../components/ui/table";
 
 export default function HomePage() {
   return (
