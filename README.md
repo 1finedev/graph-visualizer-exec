@@ -36,11 +36,13 @@ We've set up the project with some modern tools to help you get started quickly:
 
 1. Clone this repository
 2. Install dependencies:
+
 ```bash
 pnpm install
 ```
 
 3. Run the development server:
+
 ```bash
 pnpm dev
 ```
@@ -54,4 +56,3 @@ pnpm dev
 - **State Management**: Efficient handling of graph data and UI state
 - **Code Quality**: Clean, readable, and well-documented code
 - **TypeScript**: Proper type definitions and usage
-

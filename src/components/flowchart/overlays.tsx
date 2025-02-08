@@ -10,8 +10,8 @@ export const OverlayZero = ({
       className="rounded-[20px] bg-white px-[30px] pb-3 pt-5 shadow-lg"
       style={{
         position: "absolute",
-        top: `${position.y + 180}px`,
-        left: `${-position.x + 50}px`,
+        top: `calc(${position.y}px + 10rem)`,
+        left: `calc(${position.x}px - 10rem)`,
       }}
     >
       <div className="mb-3 w-1/2 rounded-[6px] bg-[#FFF1F0]">
@@ -51,8 +51,8 @@ export const OverlayOne = ({
     <div
       className="w-fit rounded-[20px] bg-white px-[30px] pb-3 pt-5 shadow-lg"
       style={{
-        top: `${position.y + 180}px`,
-        left: `${position.x - 100}px`,
+        top: `calc(${position.y}px + 10rem)`,
+        left: `calc(${position.x}px - 10rem)`,
         position: "absolute",
       }}
     >
@@ -109,8 +109,8 @@ export const OverlayTwo = ({
     <div
       className="w-fit rounded-[20px] bg-white px-[30px] pb-3 pt-5 shadow-lg"
       style={{
-        top: `${position.y + 180}px`,
-        left: `${position.x - 300}px`,
+        top: `calc(${position.y}px + 10rem)`,
+        left: `calc(${position.x}px - 10rem)`,
         position: "absolute",
       }}
     >
@@ -213,7 +213,7 @@ export const OverlayThree = ({
       className="w-fit rounded-[20px] bg-white px-[30px] pb-3 pt-5 shadow-lg"
       style={{
         top: `${position.y}px`,
-        left: `${position.x - 300}px`,
+        left: `calc(${position.x}px - 20rem)`,
         position: "absolute",
       }}
     >
@@ -269,8 +269,8 @@ export const OverlayFour = ({
     <div
       className="w-fit rounded-[20px] bg-white px-[30px] pb-3 pt-5 shadow-lg"
       style={{
-        top: `${position.y + 100}px`,
-        left: `${position.x - 300}px`,
+        top: `${position.y}px`,
+        left: `calc(${position.x}px - 20rem)`,
         position: "absolute",
       }}
     >
