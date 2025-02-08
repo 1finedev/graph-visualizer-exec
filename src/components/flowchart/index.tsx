@@ -3,6 +3,7 @@
 import { ReactFlow } from "@xyflow/react";
 
 import { initialEdges, initialNodes } from "@/data/chart";
+import { Tooltip, TooltipContent } from "@radix-ui/react-tooltip";
 import "@xyflow/react/dist/style.css";
 import { IconShieldX } from "public/svg";
 import { useState } from "react";
@@ -30,7 +31,11 @@ function FlowChart() {
           onNodeMouseLeave={() => setSelectedNode(null)}
         />
         {selectedNode && (
-          <selectedNode.data.overlay position={selectedNode.position} />
+          <Tooltip open={!!selectedNode}>
+            <TooltipContent>
+              <selectedNode.data.overlay position={selectedNode.position} />
+            </TooltipContent>
+          </Tooltip>
         )}
       </div>
       <hr />

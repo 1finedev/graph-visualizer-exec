@@ -1,25 +1,26 @@
+import { useMousePosition } from "@/hooks/useMousePosition";
 import { IconFile, IconServer, IconShieldX } from "public/svg";
 
-export const OverlayZero = ({
-  position,
-}: {
-  position: { x: number; y: number };
-}) => {
+export const OverlayZero = () => {
+  const { x, y } = useMousePosition();
+
+  if (x === 0 || y === 0) return;
+
   return (
     <div
-      className="rounded-[20px] bg-white px-[30px] pb-3 pt-5 shadow-lg"
+      className="w-max text-nowrap rounded-[20px] bg-white px-[30px] pb-3 pt-5 shadow-lg"
       style={{
         position: "absolute",
-        top: `calc(${position.y}px + 10rem)`,
-        left: `calc(${position.x}px - 10rem)`,
+        top: `calc(${y}px + 2rem)`,
+        left: `calc(${x}px - 1rem)`,
       }}
     >
-      <div className="mb-3 w-1/2 rounded-[6px] bg-[#FFF1F0]">
+      <div className="mb-3 w-1/2 flex-shrink-0 rounded-[6px] bg-[#FFF1F0]">
         <p className="text-[13px] font-semibold leading-[22px] text-[#E5372B]">
           Lorem Ipsum Dolor Sit{" "}
         </p>
       </div>
-      <div className="mb-3 grid grid-cols-3 gap-[3px] pl-[50px]">
+      <div className="mb-3 ml-[50px] grid grid-cols-3 gap-[3px]">
         {["1.2.3.4", "1.2.3.4", "1.2.3.4", "1.2.3.4", "1.2.3.4", "1.2.3.4"].map(
           (item, index) => (
             <div
@@ -42,18 +43,18 @@ export const OverlayZero = ({
   );
 };
 
-export const OverlayOne = ({
-  position,
-}: {
-  position: { x: number; y: number };
-}) => {
+export const OverlayOne = () => {
+  const { x, y } = useMousePosition();
+
+  if (x === 0 || y === 0) return;
+
   return (
     <div
-      className="w-fit rounded-[20px] bg-white px-[30px] pb-3 pt-5 shadow-lg"
+      className="w-max text-nowrap rounded-[20px] bg-white px-[30px] pb-3 pt-5 shadow-lg"
       style={{
-        top: `calc(${position.y}px + 10rem)`,
-        left: `calc(${position.x}px - 10rem)`,
         position: "absolute",
+        top: `calc(${y}px + 2rem)`,
+        left: `calc(${x}px - 1rem)`,
       }}
     >
       <div className="flex items-center gap-[14px]">
@@ -100,18 +101,18 @@ export const OverlayOne = ({
     </div>
   );
 };
-export const OverlayTwo = ({
-  position,
-}: {
-  position: { x: number; y: number };
-}) => {
+export const OverlayTwo = () => {
+  const { x, y } = useMousePosition();
+
+  if (x === 0 || y === 0) return;
+
   return (
     <div
-      className="w-fit rounded-[20px] bg-white px-[30px] pb-3 pt-5 shadow-lg"
+      className="w-max text-nowrap rounded-[20px] bg-white px-[30px] pb-3 pt-5 shadow-lg"
       style={{
-        top: `calc(${position.y}px + 10rem)`,
-        left: `calc(${position.x}px - 10rem)`,
         position: "absolute",
+        top: `calc(${y}px + 2rem)`,
+        left: `calc(${x}px - 1rem)`,
       }}
     >
       <div className="flex items-center gap-[14px]">
@@ -203,18 +204,18 @@ export const OverlayTwo = ({
   );
 };
 
-export const OverlayThree = ({
-  position,
-}: {
-  position: { x: number; y: number };
-}) => {
+export const OverlayThree = () => {
+  const { x, y } = useMousePosition();
+
+  if (x === 0 || y === 0) return;
+
   return (
     <div
-      className="w-fit rounded-[20px] bg-white px-[30px] pb-3 pt-5 shadow-lg"
+      className="w-max text-nowrap rounded-[20px] bg-white px-[30px] pb-3 pt-5 shadow-lg"
       style={{
-        top: `${position.y}px`,
-        left: `calc(${position.x}px - 20rem)`,
         position: "absolute",
+        top: `calc(${y}px - 3rem)`,
+        left: `calc(${x}px - 20rem)`,
       }}
     >
       <div className="flex items-center gap-[14px]">
@@ -260,18 +261,18 @@ export const OverlayThree = ({
   );
 };
 
-export const OverlayFour = ({
-  position,
-}: {
-  position: { x: number; y: number };
-}) => {
+export const OverlayFour = () => {
+  const { x, y } = useMousePosition();
+
+  if (x === 0 || y === 0) return;
+
   return (
     <div
-      className="w-fit rounded-[20px] bg-white px-[30px] pb-3 pt-5 shadow-lg"
+      className="w-max text-nowrap rounded-[20px] bg-white px-[30px] pb-3 pt-5 shadow-lg"
       style={{
-        top: `${position.y}px`,
-        left: `calc(${position.x}px - 20rem)`,
         position: "absolute",
+        top: `calc(${y}px - 3rem)`,
+        left: `calc(${x}px - 20rem)`,
       }}
     >
       <div className="flex items-center gap-[14px]">
