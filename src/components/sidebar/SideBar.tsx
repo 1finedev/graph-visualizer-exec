@@ -30,7 +30,7 @@ const SideBar = ({ isOpen, toggleIsOpen }: SideBarProps) => {
       <nav className="relative flex flex-1 flex-col justify-between">
         <span
           onClick={toggleIsOpen}
-          className="absolute -right-8 top-0 hidden h-8 w-8 cursor-pointer items-center justify-center rounded-full border-[3px] border-[#F0F1F3] bg-green-700 shadow-sidebar-collapse md:flex"
+          className="absolute -right-8 top-0 hidden h-8 w-8 cursor-pointer items-center justify-center rounded-full border-[3px] border-border bg-[#00732E] shadow-sidebar-collapse md:flex"
         >
           {isOpen ? (
             <ChevronLeft className="stroke-white" />
@@ -51,7 +51,7 @@ const SideBar = ({ isOpen, toggleIsOpen }: SideBarProps) => {
                 <Link key={item.id} href={item.pageUrl}>
                   <div
                     onClick={() => setCurrentPage(item.id)}
-                    className={`${currentPage === item.id && "bg-[#E9FAF0]"} ${!isOpen && "w-fit"} mb-1.5 flex items-center gap-2 rounded-lg px-3 py-2.5`}
+                    className={`${currentPage === item.id && "bg-accent"} ${!isOpen && "w-fit"} mb-1.5 flex items-center gap-2 rounded-lg px-3 py-2.5`}
                   >
                     <Tooltip>
                       <TooltipTrigger asChild>
@@ -80,7 +80,7 @@ const SideBar = ({ isOpen, toggleIsOpen }: SideBarProps) => {
               <Link key={item.id} href={item.pageUrl}>
                 <div
                   onClick={() => setCurrentPage(item.id)}
-                  className={`${currentPage === item.id && "bg-[#E9FAF0]"} mb-1.5 flex items-center gap-2 rounded-lg px-3 py-2.5`}
+                  className={`${currentPage === item.id && "bg-accent"} mb-1.5 flex items-center gap-2 rounded-lg px-3 py-2.5`}
                 >
                   <Tooltip>
                     <TooltipTrigger className="m-[1px] flex-shrink-0" asChild>

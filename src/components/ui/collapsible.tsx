@@ -10,7 +10,7 @@ const Collapsible: React.FC<TitleTextProps> = ({ title, description }) => {
   const [collapsed, setCollapsed] = useState(true);
   return (
     <div
-      className="mb-5 rounded-[15px] border border-[#F0F1F3] bg-white px-[18px] py-[13px] shadow-md"
+      className="mb-5 rounded-[15px] border border-border bg-white px-[18px] py-[13px] shadow-md"
       onClick={() => setCollapsed((prev) => !prev)}
     >
       <h3 className="mb-3 text-base font-bold text-[#030229]">{title}</h3>

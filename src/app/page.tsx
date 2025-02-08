@@ -47,13 +47,13 @@ export default function HomePage() {
         />
       </div>
       <div className="h-fit flex-1 rounded-2xl bg-white px-[30px] py-5">
-        <h3 className="mb-5 text-xl font-bold text-[#02983E]">
+        <h3 className="text-brand-green mb-5 text-xl font-bold">
           Lorem Lorem Lorem
         </h3>
 
         <FlowChart />
 
-        <h3 className="my-5 text-xl font-bold text-[#02983E]">
+        <h3 className="text-brand-green my-5 text-xl font-bold">
           Lorem ipsum dolor sit{" "}
         </h3>
 

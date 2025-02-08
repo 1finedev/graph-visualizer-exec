@@ -205,10 +205,10 @@ function FlowChart() {
           <p className="text-xl font-bold text-[#FF9500]">Lorem</p>
         </div>
         <div className="flex items-center justify-center gap-2">
-          <div className="rounded-full bg-[#02983E] p-1">
-            <ShieldX className="fill-[#02983E] stroke-white" />
+          <div className="bg-brand-green rounded-full p-1">
+            <ShieldX className="fill-brand-green stroke-white" />
           </div>
-          <p className="text-xl font-bold text-[#02983E]">Lorem</p>
+          <p className="text-brand-green text-xl font-bold">Lorem</p>
         </div>
       </div>
     </div>
