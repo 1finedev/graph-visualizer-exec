@@ -10,18 +10,18 @@ const Collapsible: React.FC<TitleTextProps> = ({ title, description }) => {
   const [collapsed, setCollapsed] = useState(true);
   return (
     <div
-      className="mb-5 rounded-[15px] border border-border bg-white px-[18px] py-[13px] shadow-md"
+      className="mb-5 rounded-[15px] border border-border bg-white px-3 py-2 shadow-md lg:px-[18px] lg:py-[13px]"
       onClick={() => setCollapsed((prev) => !prev)}
     >
       <h3 className="mb-3 text-base font-bold text-[#030229]">{title}</h3>
-      <div className="mb-5 mt-3 flex justify-around rounded-lg bg-[#FAFAFA] px-4 py-1.5">
+      <div className="mb-5 mt-3 flex justify-around rounded-lg bg-[#FAFAFA] px-1 py-1.5 lg:px-4">
         <div className="flex items-center justify-between gap-2">
-          <div className="bg-brand-blue-faded rounded-full p-3">
+          <div className="rounded-full bg-brand-blue-faded p-1 lg:p-3">
             <IconServer />
           </div>
           <div>
             <h4 className="text-xs font-semibold text-[#404A60]">Server</h4>
-            <p className="text-secondary-muted text-[10px] font-medium">
+            <p className="text-[10px] font-medium text-secondary-muted">
               Server
             </p>
           </div>

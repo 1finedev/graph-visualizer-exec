@@ -11,7 +11,7 @@ const MainLayout = ({ children }: { children: React.ReactNode }) => {
     <TooltipProvider delayDuration={100}>
       <SideBar isOpen={isOpen} toggleIsOpen={toggleIsOpen} />
       <main
-        className={`ml-auto px-9 py-7 ${!isOpen ? "w-[calc(100%-5vw)]" : "w-[calc(100%-17vw)]"}`}
+        className={`ml-auto px-4 py-7 lg:px-9 ${!isOpen ? "w-[calc(100%-5vw)]" : "w-[calc(100%-17vw)]"}`}
       >
         {children}
       </main>

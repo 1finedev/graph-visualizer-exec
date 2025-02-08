@@ -34,28 +34,28 @@ function FlowChart() {
         />
       </div>
       <hr />
-      <div className="mt-2.5 flex gap-3">
-        <div className="flex items-center justify-center gap-2">
+      <div className="mt-2.5 flex gap-2 lg:gap-3">
+        <div className="flex items-center justify-center gap-1 lg:gap-2">
           <div className="rounded-full bg-brand-red p-1">
             <IconShieldX stroke="1.5" />
           </div>
-          <p className="text-base font-bold leading-[38px] text-brand-red">
+          <p className="text-sm font-bold leading-[38px] text-brand-red lg:text-base">
             Lorem
           </p>
         </div>
-        <div className="flex items-center justify-center gap-2">
+        <div className="flex items-center justify-center gap-1 lg:gap-2">
           <div className="rounded-full bg-[#FF9500] p-1">
             <IconShieldX stroke="1.5" />
           </div>
-          <p className="text-base font-bold leading-[38px] text-brand-red">
+          <p className="text-sm font-bold leading-[38px] text-brand-red lg:text-base">
             Lorem
           </p>
         </div>
-        <div className="flex items-center justify-center gap-2">
+        <div className="flex items-center justify-center gap-1 lg:gap-2">
           <div className="rounded-full bg-brand-green p-1">
             <IconShieldX stroke="1.5" />
           </div>
-          <p className="text-base font-bold leading-[38px] text-brand-red">
+          <p className="text-sm font-bold leading-[38px] text-brand-red lg:text-base">
             Lorem
           </p>
         </div>

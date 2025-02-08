@@ -23,7 +23,7 @@ const SideBar = ({ isOpen, toggleIsOpen }: SideBarProps) => {
   return (
     <div
       className={`fixed min-h-screen shadow-sidebar ${
-        isOpen ? "lg:w-[17vw]" : "w-[5vw]"
+        isOpen ? "w-full" : "w-[5vw]"
       } flex max-w-[17vw] flex-col rounded-br-xl rounded-tr-xl bg-white px-4 py-7 transition-all duration-300`}
     >
       <nav className="relative flex flex-1 flex-col justify-between">

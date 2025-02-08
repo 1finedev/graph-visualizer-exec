@@ -9,7 +9,7 @@ import Table from "../components/ui/table";
 export default function HomePage() {
   return (
     <div className="lg:flex lg:justify-between lg:gap-5">
-      <div className="w-full flex-shrink-0 rounded-2xl bg-white px-[30px] py-5 lg:w-[30%]">
+      <div className="w-full flex-shrink-0 rounded-2xl bg-white px-4 py-5 lg:w-[30%] lg:px-[30px]">
         <InfoBlock
           className="mb-12"
           title="Description"
@@ -25,12 +25,16 @@ export default function HomePage() {
           {SECTION_COLS_DATA.map((row) => {
             return (
               <Fragment key={row.id}>
-                <h3 className={`${row.className} text-base font-bold`}>
+                <h3
+                  className={`${row.className} text-sm font-bold lg:text-base`}
+                >
                   {row.key}
                 </h3>
                 <div className="flex items-center gap-2.5">
                   {row?.icon && <row.icon />}
-                  <p className="text-base text-secondary">{row.value}</p>
+                  <p className="text-sm text-secondary lg:text-base">
+                    {row.value}
+                  </p>
                 </div>
               </Fragment>
             );
@@ -53,7 +57,7 @@ export default function HomePage() {
           description="Lorem ipsum dolor sit amet consectetur. In laoreet elementum luctus odio. Id enim urna."
         />
       </div>
-      <div className="h-fit flex-1 rounded-2xl bg-white px-[30px] py-5">
+      <div className="mt-10 h-fit flex-1 rounded-2xl bg-white px-4 py-5 lg:mt-0 lg:px-[30px]">
         <h3 className="mb-5 text-xl font-bold text-brand-green">
           Lorem Lorem Lorem
         </h3>
