@@ -1,4 +1,11 @@
 import {
+  OverlayFour,
+  OverlayOne,
+  OverlayThree,
+  OverlayTwo,
+  OverlayZero,
+} from "@/components/flowchart/overlays";
+import {
   IconGroup,
   IconServer,
   IconShieldX,
@@ -11,6 +18,9 @@ export const initialNodes = [
     type: "custom",
     position: { x: 100, y: 100 },
     data: {
+      id: "0",
+
+      overlay: OverlayZero,
       handles: [{ type: "source", position: "right", id: 0 }],
       text: "Loremipsumm",
       icon: IconVenetianMask,
@@ -28,6 +38,9 @@ export const initialNodes = [
     type: "custom",
     position: { x: 250, y: 100 },
     data: {
+      id: "1",
+
+      overlay: OverlayOne,
       handles: [
         { type: "target", position: "left", id: 0 },
         { type: "source", position: "right", id: 1 },
@@ -42,6 +55,8 @@ export const initialNodes = [
     type: "custom",
     position: { x: 400, y: 100 },
     data: {
+      id: "2",
+      overlay: OverlayTwo,
       handles: [
         { type: "target", position: "left", id: 0 },
         { type: "source", position: "right", id: 1 },
@@ -56,6 +71,8 @@ export const initialNodes = [
     type: "custom",
     position: { x: 650, y: 0 },
     data: {
+      id: "3",
+      overlay: OverlayThree,
       handles: [{ type: "target", position: "left", id: 0 }],
       text: "Loremipsumdolorsit",
       subText: "192.168.1.1",
@@ -73,6 +90,8 @@ export const initialNodes = [
     type: "custom",
     position: { x: 650, y: 200 },
     data: {
+      id: "4",
+      overlay: OverlayFour,
       handles: [{ type: "target", position: "left", id: 0 }],
       text: "Loremipsumdolorsit002",
       subText: "192.168.1.2",

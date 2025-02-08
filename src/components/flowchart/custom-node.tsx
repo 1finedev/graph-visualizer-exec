@@ -7,8 +7,9 @@ import { Handle, Position, type Node, type NodeProps } from "@xyflow/react";
 import { type LucideIcon } from "lucide-react";
 
 type CustomData = {
+  id: string;
+  overlay: React.FC;
   icon: React.FC;
-  isInvisible?: boolean;
   handles: {
     type: "target" | "source";
     position: "left" | "right";
@@ -51,24 +52,23 @@ const CustomNode = ({ data }: NodeProps<CustomNode>) => {
 
       <Tooltip>
         <TooltipTrigger>
-          <div className="cursor-pointer">
+          <div className="relative cursor-pointer">
             <data.icon />
-            <p className="absolute -bottom-5 text-sm font-semibold text-secondary">
+            <p className="absolute -bottom-8 left-1/2 -translate-x-1/2 transform text-sm font-semibold text-secondary">
               {data.text}
             </p>
             {data.subText && (
-              <p className="absolute -bottom-10 text-xs font-semibold text-secondary-muted">
+              <p className="absolute -bottom-12 text-xs font-semibold text-secondary-muted">
                 {data.subText}
               </p>
             )}
           </div>
         </TooltipTrigger>
         <TooltipContent
-          // className={`rounded-full bg-accent px-4 text-base font-medium ${isOpen && "hidden"}`}
-          // side="right"
-          sideOffset={20}
+          side={Number(data.id) > 2 ? "left" : "bottom"}
+          sideOffset={50}
         >
-          hello world
+          <data.overlay />
         </TooltipContent>
       </Tooltip>
     </div>
