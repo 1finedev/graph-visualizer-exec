@@ -12,7 +12,7 @@ import {
 
 import { initialEdges, initialNodes } from "@/data/chart";
 import "@xyflow/react/dist/style.css";
-import { ShieldX } from "lucide-react";
+import { IconShieldX } from "public/svg";
 import { useCallback } from "react";
 import CustomNode from "./custom-node";
 
@@ -68,22 +68,28 @@ function FlowChart() {
       <hr />
       <div className="mt-2.5 flex gap-3">
         <div className="flex items-center justify-center gap-2">
-          <div className="bg-brand-red rounded-full p-1">
-            <ShieldX className="fill-brand-red stroke-white" />
+          <div className="rounded-full bg-brand-red p-1">
+            <IconShieldX stroke="1.5" />
           </div>
-          <p className="text-brand-red text-xl font-bold">Lorem</p>
+          <p className="text-base font-bold leading-[38px] text-brand-red">
+            Lorem
+          </p>
         </div>
         <div className="flex items-center justify-center gap-2">
           <div className="rounded-full bg-[#FF9500] p-1">
-            <ShieldX className="fill-[#FF9500] stroke-white" />
+            <IconShieldX stroke="1.5" />
           </div>
-          <p className="text-xl font-bold text-[#FF9500]">Lorem</p>
+          <p className="text-base font-bold leading-[38px] text-brand-red">
+            Lorem
+          </p>
         </div>
         <div className="flex items-center justify-center gap-2">
-          <div className="bg-brand-green rounded-full p-1">
-            <ShieldX className="fill-brand-green stroke-white" />
+          <div className="rounded-full bg-brand-green p-1">
+            <IconShieldX stroke="1.5" />
           </div>
-          <p className="text-brand-green text-xl font-bold">Lorem</p>
+          <p className="text-base font-bold leading-[38px] text-brand-red">
+            Lorem
+          </p>
         </div>
       </div>
     </div>
