@@ -34,7 +34,7 @@ const Collapsible: React.FC<TitleTextProps> = ({ title, description }) => {
       <div
         className={`${collapsed ? "max-h-0" : "max-h-[20vh]"} overflow-hidden transition-all duration-300 ease-in-out`}
       >
-        <p className="text-base text-[#525D73]">{description}</p>
+        <p className="text-base text-secondary">{description}</p>
       </div>
     </div>
   );

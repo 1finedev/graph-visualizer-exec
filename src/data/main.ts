@@ -17,32 +17,32 @@ export const SECTION_COLS_DATA = [
     id: 2,
     key: "Lorem ipsum dolor",
     value: "Eros",
-    className: "text-[#525D73]",
+    className: "text-secondary",
   },
   {
     id: 3,
     key: "Lorem ipsum dolor",
     icon: Check,
     value: "Yes",
-    className: "text-[#525D73]",
+    className: "text-secondary",
   },
   {
     id: 4,
     key: "Lorem ipsum dolor",
     value: "Sit",
-    className: "text-[#525D73]",
+    className: "text-secondary",
   },
   {
     id: 5,
     key: "Lorem ipsum dolor",
     value: "Lorem ipsum dolor",
-    className: "text-[#525D73]",
+    className: "text-secondary",
   },
   {
     id: 6,
     key: "Lorem ipsum dolor",
     value: "Lorem ipsum dolor",
-    className: "text-[#525D73]",
+    className: "text-secondary",
   },
 ];
 

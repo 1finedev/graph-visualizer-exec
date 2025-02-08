@@ -1,25 +1,26 @@
 import {
-  Cuboid,
-  FileText,
-  LayoutDashboard,
-  MonitorCog,
-  Settings,
-  Shrink,
-  TriangleAlert,
-  Unplug,
-} from "lucide-react";
+  IconFive,
+  IconFour,
+  IconNine,
+  IconOne,
+  IconSettings,
+  IconSeven,
+  IconSix,
+  IconThree,
+  IconTwo,
+} from "public/svg";
 
 export const NAV_LINKS = [
   {
     id: 1,
-    icon: LayoutDashboard,
+    icon: IconOne,
     label: "Lorem",
     pageUrl: "/",
     className: "stroke-0",
   },
   {
     id: 2,
-    icon: TriangleAlert,
+    icon: IconTwo,
     label: "Lorem",
     pageUrl: "/",
     className: "stroke-0.5 stroke-white",
@@ -27,7 +28,7 @@ export const NAV_LINKS = [
   },
   {
     id: 3,
-    icon: Cuboid,
+    icon: IconThree,
     label: "Integration",
     pageUrl: "/",
     className: "stroke-0.5 stroke-white",
@@ -35,21 +36,21 @@ export const NAV_LINKS = [
   },
   {
     id: 4,
-    icon: Shrink,
+    icon: IconFour,
     label: "Vulnerability",
     pageUrl: "/",
     className: "stroke-[#A3A9B6]",
   },
   {
     id: 5,
-    icon: Unplug,
+    icon: IconFive,
     label: "Lorem",
     pageUrl: "/",
     className: "stroke-[#A3A9B6]",
   },
   {
     id: 6,
-    icon: FileText,
+    icon: IconSix,
     label: "Lorem",
     pageUrl: "/",
     className: "stroke-0.5 stroke-white",
@@ -57,7 +58,7 @@ export const NAV_LINKS = [
   },
   {
     id: 7,
-    icon: FileText,
+    icon: IconSeven,
     label: "Lorem",
     pageUrl: "/",
     className: "stroke-0.5 stroke-white",
@@ -68,7 +69,7 @@ export const NAV_LINKS = [
 export const NAV_LINKS_BASE = [
   {
     id: 8,
-    icon: Settings,
+    icon: IconSettings,
     label: "Settings",
     pageUrl: "/",
     className: "stroke-0.5 stroke-black",
@@ -76,7 +77,7 @@ export const NAV_LINKS_BASE = [
   },
   {
     id: 9,
-    icon: MonitorCog,
+    icon: IconNine,
     label: "Lorem",
     pageUrl: "/",
     className: "stroke-0.5 stroke-white",

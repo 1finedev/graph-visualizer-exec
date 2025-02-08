@@ -26,7 +26,7 @@ export default function HomePage() {
             return (
               <Fragment key={row.id}>
                 <h3 className={`${row.className} font-bold`}>{row.key}</h3>
-                <p className="text-[#525D73]">{row.value}</p>
+                <p className="text-secondary">{row.value}</p>
               </Fragment>
             );
           })}
@@ -77,7 +77,7 @@ export default function HomePage() {
                       <Server className="stroke-[#1873DE]" />
                     </div>
                     <div>
-                      <p className="text-sm font-semibold text-[#525D73]">
+                      <p className="text-sm font-semibold text-secondary">
                         Loremipsumdolorsit
                       </p>
                       <p className="text-xs font-semibold text-[#667085]">
@@ -99,7 +99,7 @@ export default function HomePage() {
                       <Server className="stroke-[#1873DE]" />
                     </div>
                     <div>
-                      <p className="text-sm font-semibold text-[#525D73]">
+                      <p className="text-sm font-semibold text-secondary">
                         Loremipsumdolorsit
                       </p>
                       <p className="text-xs font-semibold text-[#667085]">

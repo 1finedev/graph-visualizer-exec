@@ -50,7 +50,7 @@ const CustomNode = ({ data }: NodeProps<CustomNode>) => {
         </div>
       )}
       <data.icon className={`${data.iconColor} h-6 w-6`} />
-      <p className="absolute -bottom-5 text-sm font-semibold text-[#525D73]">
+      <p className="absolute -bottom-5 text-sm font-semibold text-secondary">
         {data.text}
       </p>
       {data.subText && (
