@@ -40,7 +40,11 @@ export default {
         sm: "calc(var(--radius) - 4px)",
       },
       colors: {
-        "brand-green": "hsl(var(--brand-green))",
+        brand: {
+          green: "hsl(var(--brand-green))",
+          blue: "hsl(var(--brand-blue))",
+          "blue-faded": "hsl(var(--brand-blue-faded))",
+        },
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
         card: {

@@ -1,4 +1,4 @@
-import { Server } from "lucide-react";
+import { IconServer } from "public/svg";
 import { useState } from "react";
 
 interface TitleTextProps {
@@ -16,8 +16,8 @@ const Collapsible: React.FC<TitleTextProps> = ({ title, description }) => {
       <h3 className="mb-3 text-base font-bold text-[#030229]">{title}</h3>
       <div className="mb-5 mt-3 flex justify-around rounded-lg bg-[#FAFAFA] px-4 py-1.5">
         <div className="flex items-center justify-between gap-2">
-          <div className="rounded-full bg-[#D7EAFF] p-3">
-            <Server className="stroke-[#1873DE]" />
+          <div className="bg-brand-blue-faded rounded-full p-3">
+            <IconServer />
           </div>
           <div>
             <h4 className="text-xs font-semibold text-[#404A60]">Server</h4>

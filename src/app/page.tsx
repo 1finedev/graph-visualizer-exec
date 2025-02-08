@@ -3,7 +3,8 @@ import FlowChart from "@/components/flowchart";
 import Collapsible from "@/components/ui/collapsible";
 import InfoBlock from "@/components/ui/InfoBlock";
 import { SECTION_COLS_DATA } from "@/data/main";
-import { ChevronLeft, ChevronRight, Server } from "lucide-react";
+import { ChevronLeft, ChevronRight } from "lucide-react";
+import { IconServer } from "public/svg";
 import { Fragment } from "react";
 
 export default function HomePage() {
@@ -80,8 +81,8 @@ export default function HomePage() {
               <tbody>
                 <tr className="border-b">
                   <td className="flex items-center gap-3 p-2.5">
-                    <div className="w-fit rounded-full bg-[#D7EAFF] p-3">
-                      <Server className="stroke-[#1873DE]" />
+                    <div className="bg-brand-blue-faded w-fit rounded-full p-3">
+                      <IconServer />
                     </div>
                     <div>
                       <p className="text-sm font-semibold text-secondary">
@@ -102,8 +103,8 @@ export default function HomePage() {
                 </tr>
                 <tr className="border-b">
                   <td className="flex items-center gap-3 p-2.5">
-                    <div className="w-fit rounded-full bg-[#D7EAFF] p-3">
-                      <Server className="stroke-[#1873DE]" />
+                    <div className="bg-brand-blue-faded w-fit rounded-full p-3">
+                      <IconServer />
                     </div>
                     <div>
                       <p className="text-sm font-semibold text-secondary">

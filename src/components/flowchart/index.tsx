@@ -91,7 +91,7 @@ const initialNodes = [
       text: "Loremipsu",
       icon: Server,
       iconColor: "stroke-[#1873DE]",
-      background: "bg-[#D7EAFF]",
+      background: "bg-brand-blue-faded",
     },
   },
   {
@@ -102,7 +102,7 @@ const initialNodes = [
       text: "Loremipsumm",
       icon: Server,
       iconColor: "stroke-[#1873DE]",
-      background: "bg-[#D7EAFF]",
+      background: "bg-brand-blue-faded",
     },
   },
   {
@@ -114,7 +114,7 @@ const initialNodes = [
       subText: "192.168.1.1",
       icon: Server,
       iconColor: "stroke-[#1873DE]",
-      background: "bg-[#D7EAFF]",
+      background: "bg-brand-blue-faded",
       meta: {
         icon: ShieldX,
         iconColor: "stroke-[#FFFFFF]",
@@ -131,7 +131,7 @@ const initialNodes = [
       subText: "192.168.1.2",
       icon: Server,
       iconColor: "stroke-[#1873DE]",
-      background: "bg-[#D7EAFF]",
+      background: "bg-brand-blue-faded",
       meta: {
         icon: ShieldX,
         iconColor: "stroke-[#FFFFFF]",
