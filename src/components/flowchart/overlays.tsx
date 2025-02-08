@@ -12,7 +12,7 @@ export const OverlayZero = () => {
       style={{
         position: "absolute",
         top: `calc(${y}px + 2rem)`,
-        left: `calc(${x}px - 1rem)`,
+        left: `calc(${x}px - 10rem)`,
       }}
     >
       <div className="mb-3 w-1/2 flex-shrink-0 rounded-[6px] bg-[#FFF1F0]">
@@ -54,7 +54,7 @@ export const OverlayOne = () => {
       style={{
         position: "absolute",
         top: `calc(${y}px + 2rem)`,
-        left: `calc(${x}px - 1rem)`,
+        left: `calc(${x}px - 10rem)`,
       }}
     >
       <div className="flex items-center gap-[14px]">
@@ -112,7 +112,7 @@ export const OverlayTwo = () => {
       style={{
         position: "absolute",
         top: `calc(${y}px + 2rem)`,
-        left: `calc(${x}px - 1rem)`,
+        left: `calc(${x}px - 15rem)`,
       }}
     >
       <div className="flex items-center gap-[14px]">
