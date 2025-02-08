@@ -930,3 +930,21 @@ export const AsteliaLogoText = () => (
     />
   </svg>
 );
+
+export const CheckIcon = () => (
+  <svg
+    width="15"
+    height="16"
+    viewBox="0 0 15 16"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      d="M12.5 4.25L5.625 11.125L2.5 8"
+      stroke="#08B94E"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+  </svg>
+);

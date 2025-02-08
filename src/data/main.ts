@@ -1,17 +1,17 @@
-import { Check } from "lucide-react";
+import { CheckIcon } from "public/svg";
 
 export const SECTION_COLS_DATA = [
   {
     id: 0,
     key: "Lorem ipsum dolor",
     value: "10/19/2017",
-    className: "text-[#33415]",
+    className: "text-secondary-faded",
   },
   {
     id: 1,
     key: "Lorem ipsum dolor",
     value: "Ut",
-    className: "text-[#33415]",
+    className: "text-secondary-faded",
   },
   {
     id: 2,
@@ -22,7 +22,7 @@ export const SECTION_COLS_DATA = [
   {
     id: 3,
     key: "Lorem ipsum dolor",
-    icon: Check,
+    icon: CheckIcon,
     value: "Yes",
     className: "text-secondary",
   },

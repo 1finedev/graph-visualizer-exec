@@ -25,14 +25,21 @@ export default function HomePage() {
           {SECTION_COLS_DATA.map((row) => {
             return (
               <Fragment key={row.id}>
-                <h3 className={`${row.className} font-bold`}>{row.key}</h3>
-                <p className="text-secondary">{row.value}</p>
+                <h3 className={`${row.className} text-base font-bold`}>
+                  {row.key}
+                </h3>
+                <div className="flex items-center gap-2.5">
+                  {row?.icon && <row.icon />}
+                  <p className="text-base text-secondary">{row.value}</p>
+                </div>
               </Fragment>
             );
           })}
         </div>
         <hr />
-        <h3 className="my-3 font-bold text-[#33415]">Lorem ipsum dolor sit</h3>
+        <h3 className="text-secondary-faded my-3 font-bold">
+          Lorem ipsum dolor sit
+        </h3>
         <Collapsible
           title="Lorem P"
           description="Lorem ipsum dolor sit amet consectetur. Nunc vitae tortor convallis vitae arcu. Magna."
