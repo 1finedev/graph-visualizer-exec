@@ -153,7 +153,8 @@ export const IconSeven = ({ hovered }: { hovered: boolean }) => (
 
 export const IconSettings = ({ hovered }: { hovered: boolean }) => (
   <svg
-    className="h-5 w-5"
+    width="20"
+    height="20"
     viewBox="0 0 17 18"
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
@@ -167,7 +168,8 @@ export const IconSettings = ({ hovered }: { hovered: boolean }) => (
 
 export const IconNine = ({ hovered }: { hovered: boolean }) => (
   <svg
-    className="h-5 w-5"
+    width={20}
+    height={20}
     viewBox="0 0 18 18"
     fill="none"
     xmlns="http://www.w3.org/2000/svg"

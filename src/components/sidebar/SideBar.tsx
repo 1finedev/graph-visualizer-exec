@@ -82,10 +82,11 @@ const SideBar = ({ isOpen, toggleIsOpen }: SideBarProps) => {
             <Link key={item.id} href={item.pageUrl}>
               <div
                 onClick={() => setCurrentPage(item.id)}
-                className={`${currentPage === item.id && "bg-accent"} mb-1.5 flex items-center gap-2 rounded-lg px-3 py-2.5`}
+                className={`${currentPage === item.id && "bg-accent"} ${!isOpen && "w-fit"} mb-1.5 flex items-center gap-2 rounded-lg px-3 py-2.5`}
               >
-                <item.icon hovered={currentPage === item.id} />
-
+                <div>
+                  <item.icon hovered={currentPage === item.id} />
+                </div>
                 {isOpen && (
                   <p className="hidden flex-shrink-0 text-base text-secondary lg:inline-block">
                     {item.label}
