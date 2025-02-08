@@ -5,6 +5,7 @@ import {
   OverlayTwo,
   OverlayZero,
 } from "@/components/flowchart/overlays";
+import { MarkerType } from "@xyflow/react";
 import {
   IconGroup,
   IconServer,
@@ -107,8 +108,36 @@ export const initialNodes = [
 ];
 
 export const initialEdges = [
-  { id: "0-1", source: "0", target: "1" },
-  { id: "1-2", source: "1", target: "2" },
-  { id: "2-3", source: "2", target: "3" },
-  { id: "2-4", source: "2", target: "4" },
+  {
+    id: "0-1",
+    source: "0",
+    target: "1",
+    markerEnd: {
+      type: MarkerType.ArrowClosed,
+    },
+  },
+  {
+    id: "1-2",
+    source: "1",
+    target: "2",
+    markerEnd: {
+      type: MarkerType.ArrowClosed,
+    },
+  },
+  {
+    id: "2-3",
+    source: "2",
+    target: "3",
+    markerEnd: {
+      type: MarkerType.ArrowClosed,
+    },
+  },
+  {
+    id: "2-4",
+    source: "2",
+    target: "4",
+    markerEnd: {
+      type: MarkerType.ArrowClosed,
+    },
+  },
 ];

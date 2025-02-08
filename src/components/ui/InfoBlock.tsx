@@ -7,8 +7,8 @@ interface TitleTextProps {
 
 const InfoBlock: React.FC<TitleTextProps> = ({ title, text, className }) => {
   return (
-    <div className={className}>
-      <h3 className="text-brand-green mb-3 text-xl font-bold">{title}</h3>
+    <div className={`w-full ${className}`}>
+      <h3 className="mb-3 text-xl font-bold text-brand-green">{title}</h3>
       <p className="text-xs text-secondary">{text}</p>
     </div>
   );

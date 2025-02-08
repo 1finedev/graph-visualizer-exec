@@ -8,8 +8,8 @@ import Table from "../components/ui/table";
 
 export default function HomePage() {
   return (
-    <div className="flex justify-between gap-5">
-      <div className="w-[30%] flex-shrink-0 rounded-2xl bg-white px-[30px] py-5">
+    <div className="lg:flex lg:justify-between lg:gap-5">
+      <div className="w-full flex-shrink-0 rounded-2xl bg-white px-[30px] py-5 lg:w-[30%]">
         <InfoBlock
           className="mb-12"
           title="Description"

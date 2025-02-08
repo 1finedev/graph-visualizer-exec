@@ -2,8 +2,8 @@ import { IconChevronLeft, IconChevronRight, IconServer } from "public/svg";
 
 const Table = () => {
   return (
-    <div className="flex gap-5">
-      <div className="overflow-hidden rounded-xl border shadow">
+    <div className="gap-5 lg:flex">
+      <div className="mb-8 overflow-auto rounded-xl border shadow lg:mb-0">
         <table className="w-full table-auto border-collapse">
           <thead>
             <tr className="border-b">
@@ -73,7 +73,7 @@ const Table = () => {
         <h3 className="mb-4 text-lg font-medium text-secondary-muted">
           Contextual Risk
         </h3>
-        <div className="flex justify-center gap-12">
+        <div className="mb-5 lg:flex lg:justify-center lg:gap-12">
           <ul className="flex list-disc flex-col justify-between py-2 pl-5">
             <li className="text-base marker:text-brand-red">
               <span className="font-bold">2</span> Critical

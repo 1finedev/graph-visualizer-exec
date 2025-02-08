@@ -23,13 +23,13 @@ const SideBar = ({ isOpen, toggleIsOpen }: SideBarProps) => {
   return (
     <div
       className={`fixed min-h-screen shadow-sidebar ${
-        isOpen ? "w-[17vw]" : "w-[5vw]"
+        isOpen ? "lg:w-[17vw]" : "w-[5vw]"
       } flex max-w-[17vw] flex-col rounded-br-xl rounded-tr-xl bg-white px-4 py-7 transition-all duration-300`}
     >
       <nav className="relative flex flex-1 flex-col justify-between">
         <span
           onClick={toggleIsOpen}
-          className="absolute -right-8 top-0 hidden h-8 w-8 cursor-pointer items-center justify-center rounded-full border-[3px] border-border bg-[#00732E] shadow-sidebar-collapse md:flex"
+          className="absolute -right-8 top-0 hidden h-8 w-8 cursor-pointer items-center justify-center rounded-full border-[3px] border-border bg-[#00732E] shadow-sidebar-collapse lg:flex"
         >
           {isOpen ? (
             <ChevronLeft className="stroke-white" />
@@ -42,7 +42,11 @@ const SideBar = ({ isOpen, toggleIsOpen }: SideBarProps) => {
             <div>
               <AsteliaLogo />
             </div>
-            {isOpen && <AsteliaLogoText />}
+            {isOpen && (
+              <div className="hidden lg:block">
+                <AsteliaLogoText />
+              </div>
+            )}
           </div>
           <div>
             {NAV_LINKS.map((item) => (
@@ -63,7 +67,7 @@ const SideBar = ({ isOpen, toggleIsOpen }: SideBarProps) => {
                       {item.label}{" "}
                     </TooltipContent>
                     {isOpen && (
-                      <p className="hidden flex-shrink-0 text-base text-secondary md:inline-block">
+                      <p className="hidden flex-shrink-0 text-base text-secondary lg:inline-block">
                         {item.label}
                       </p>
                     )}
@@ -83,7 +87,7 @@ const SideBar = ({ isOpen, toggleIsOpen }: SideBarProps) => {
                 <item.icon hovered={currentPage === item.id} />
 
                 {isOpen && (
-                  <p className="hidden flex-shrink-0 text-base text-secondary md:inline-block">
+                  <p className="hidden flex-shrink-0 text-base text-secondary lg:inline-block">
                     {item.label}
                   </p>
                 )}
@@ -94,7 +98,7 @@ const SideBar = ({ isOpen, toggleIsOpen }: SideBarProps) => {
           <hr className="my-5" />
           <div className="flex cursor-pointer items-center justify-between">
             {isOpen && (
-              <div className="hidden gap-3 md:flex md:items-center">
+              <div className="hidden gap-3 lg:flex lg:items-center">
                 <Image src="/avatar.jpeg" width={60} height={60} alt="" />
                 <div>
                   <p className="text-base">Lorem</p>
