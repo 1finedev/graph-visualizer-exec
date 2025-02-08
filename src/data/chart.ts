@@ -27,7 +27,7 @@ export const initialNodes = [
       background: "bg-brand-pink",
       meta: {
         icon: IconGroup,
-        background: "bg-[#7A44FF]",
+        background: "bg-brand-purple",
       },
     },
   },

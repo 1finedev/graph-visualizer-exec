@@ -1,8 +1,3 @@
-import {
-  Tooltip,
-  TooltipContent,
-  TooltipTrigger,
-} from "@radix-ui/react-tooltip";
 import { Handle, Position, type Node, type NodeProps } from "@xyflow/react";
 import { type LucideIcon } from "lucide-react";
 
@@ -31,17 +26,8 @@ type CustomNode = Node<CustomData, "custom">;
 const CustomNode = ({ data }: NodeProps<CustomNode>) => {
   return (
     <div
-      className={`rounded-full ${data.background} relative mx-10 flex items-center justify-center p-3`}
+      className={`relative mx-14 flex cursor-pointer items-center justify-center rounded-full p-3 ${data.background} `}
     >
-      {data?.handles?.map((handle) => (
-        <Handle
-          key={handle.id}
-          id={handle.id.toString()}
-          type={handle.type}
-          position={handle.position === "left" ? Position.Left : Position.Right}
-          onConnect={(params) => console.log("handle onConnect", params)}
-        />
-      ))}
       {data?.meta && (
         <div
           className={`${data.meta.background} absolute -right-2 -top-3 flex items-center justify-center rounded-full border border-white p-1`}
@@ -49,28 +35,25 @@ const CustomNode = ({ data }: NodeProps<CustomNode>) => {
           <data.meta.icon />
         </div>
       )}
+      <data.icon />
+      <p className="absolute -bottom-5 text-sm font-semibold text-secondary">
+        {data.text}
+      </p>
+      {data.subText && (
+        <p className="absolute -bottom-10 text-xs font-semibold text-secondary-muted">
+          {data.subText}
+        </p>
+      )}
 
-      <Tooltip>
-        <TooltipTrigger>
-          <div className="relative cursor-pointer">
-            <data.icon />
-            <p className="absolute -bottom-8 left-1/2 -translate-x-1/2 transform text-sm font-semibold text-secondary">
-              {data.text}
-            </p>
-            {data.subText && (
-              <p className="absolute -bottom-12 text-xs font-semibold text-secondary-muted">
-                {data.subText}
-              </p>
-            )}
-          </div>
-        </TooltipTrigger>
-        <TooltipContent
-          side={Number(data.id) > 2 ? "left" : "bottom"}
-          sideOffset={50}
-        >
-          <data.overlay />
-        </TooltipContent>
-      </Tooltip>
+      {data?.handles?.map((handle) => (
+        <Handle
+          key={handle.id}
+          id={handle.id.toString()}
+          type={handle.type}
+          position={handle.position === "left" ? Position.Left : Position.Right}
+        />
+      ))}
+      <div className="bg-brand-pink" />
     </div>
   );
 };

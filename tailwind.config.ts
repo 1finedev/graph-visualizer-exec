@@ -46,6 +46,7 @@ export default {
           "blue-faded": "hsl(var(--brand-blue-faded))",
           red: "hsl(var(--brand-red))",
           pink: "hsl(var(--brand-pink))",
+          purple: "hsl(var(--brand-purple))",
         },
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
@@ -91,5 +92,9 @@ export default {
       },
     },
   },
+  safelist: [
+    "bg-brand-pink",
+    "bg-brand-purple", // Ensure this class is always included
+  ],
   plugins: [tailwindAnimate],
 } satisfies Config;
