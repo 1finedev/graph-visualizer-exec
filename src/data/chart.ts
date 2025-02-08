@@ -21,7 +21,7 @@ export const initialNodes = [
     data: {
       id: "0",
       overlay: OverlayZero,
-      handles: [{ type: "source", position: "right", id: 0 }],
+      handles: [{ type: "source" as const, position: "right" as const, id: 0 }],
       text: "Loremipsumm",
       icon: IconVenetianMask,
       background: "bg-brand-pink",
@@ -39,8 +39,8 @@ export const initialNodes = [
       id: "1",
       overlay: OverlayOne,
       handles: [
-        { type: "target", position: "left", id: 0 },
-        { type: "source", position: "right", id: 1 },
+        { type: "target" as const, position: "left" as const, id: 0 },
+        { type: "source" as const, position: "right" as const, id: 1 },
       ],
       text: "Loremipsu",
       icon: IconServer,
@@ -55,8 +55,8 @@ export const initialNodes = [
       id: "2",
       overlay: OverlayTwo,
       handles: [
-        { type: "target", position: "left", id: 0 },
-        { type: "source", position: "right", id: 1 },
+        { type: "target" as const, position: "left" as const, id: 0 },
+        { type: "source" as const, position: "right" as const, id: 1 },
       ],
       text: "Loremipsumm",
       icon: IconServer,
@@ -70,7 +70,7 @@ export const initialNodes = [
     data: {
       id: "3",
       overlay: OverlayThree,
-      handles: [{ type: "target", position: "left", id: 0 }],
+      handles: [{ type: "target" as const, position: "left" as const, id: 0 }],
       text: "Loremipsumdolorsit",
       subText: "192.168.1.1",
       icon: IconServer,
@@ -88,11 +88,10 @@ export const initialNodes = [
     data: {
       id: "4",
       overlay: OverlayFour,
-      handles: [{ type: "target", position: "left", id: 0 }],
+      handles: [{ type: "target" as const, position: "left" as const, id: 0 }],
       text: "Loremipsumdolorsit002",
       subText: "192.168.1.2",
       icon: IconServer,
-      iconColor: "stroke-[#1873DE]",
       background: "bg-brand-blue-faded",
       meta: {
         icon: IconShieldX,

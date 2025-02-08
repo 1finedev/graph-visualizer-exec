@@ -6,7 +6,7 @@ import { initialEdges, initialNodes } from "@/data/chart";
 import "@xyflow/react/dist/style.css";
 import { IconShieldX } from "public/svg";
 import { useState } from "react";
-import CustomNode from "./custom-node";
+import CustomNode, { type TCustomNode } from "./custom-node";
 
 const nodeTypes = {
   custom: CustomNode,
@@ -15,17 +15,23 @@ const nodeTypes = {
 function FlowChart() {
   const [nodes] = useState(initialNodes);
   const [edges] = useState(initialEdges);
+  const [selectedNode, setSelectedNode] = useState<TCustomNode | null>();
 
   return (
     <div className="rounded-2xl bg-[#FAFAFA] p-4">
-      <div className="h-[40vh]">
+      <div className="relative h-[40vh]">
         <ReactFlow
           nodes={nodes}
           nodeTypes={nodeTypes}
           edges={edges}
           fitView
           attributionPosition="top-right"
+          onNodeMouseEnter={(_, node) => setSelectedNode(node as TCustomNode)}
+          onNodeMouseLeave={() => setSelectedNode(null)}
         />
+        {selectedNode && (
+          <selectedNode.data.overlay position={selectedNode.position} />
+        )}
       </div>
       <hr />
       <div className="mt-2.5 flex gap-2 lg:gap-3">

@@ -1,9 +1,8 @@
 import { Handle, Position, type Node, type NodeProps } from "@xyflow/react";
-import { type LucideIcon } from "lucide-react";
 
 type CustomData = {
   id: string;
-  overlay: React.FC;
+  overlay: React.FC<{ position: { x: number; y: number } }>;
   icon: React.FC;
   handles: {
     type: "target" | "source";
@@ -11,19 +10,17 @@ type CustomData = {
     id: number;
   }[];
   subText?: string;
-  iconColor: string;
   background: string;
   text: string;
   meta: {
-    icon: LucideIcon;
-    iconColor: string;
+    icon: React.FC;
     background: string;
   };
 };
 
-type CustomNode = Node<CustomData, "custom">;
+export type TCustomNode = Node<CustomData, "custom">;
 
-const CustomNode = ({ data }: NodeProps<CustomNode>) => {
+const CustomNode = ({ data }: NodeProps<TCustomNode>) => {
   return (
     <div
       className={`relative mx-14 flex cursor-pointer items-center justify-center rounded-full p-3 ${data.background} `}
@@ -44,7 +41,6 @@ const CustomNode = ({ data }: NodeProps<CustomNode>) => {
           {data.subText}
         </p>
       )}
-
       {data?.handles?.map((handle) => (
         <Handle
           key={handle.id}
