@@ -21,7 +21,9 @@ const Collapsible: React.FC<TitleTextProps> = ({ title, description }) => {
           </div>
           <div>
             <h4 className="text-xs font-semibold text-[#404A60]">Server</h4>
-            <p className="text-[10px] font-medium text-[#667085]">Server</p>
+            <p className="text-secondary-muted text-[10px] font-medium">
+              Server
+            </p>
           </div>
         </div>
         <div className="mx-4 border" />

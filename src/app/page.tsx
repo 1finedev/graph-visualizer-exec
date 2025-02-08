@@ -3,8 +3,7 @@ import FlowChart from "@/components/flowchart";
 import Collapsible from "@/components/ui/collapsible";
 import InfoBlock from "@/components/ui/InfoBlock";
 import { SECTION_COLS_DATA } from "@/data/main";
-import { ChevronLeft, ChevronRight } from "lucide-react";
-import { IconServer } from "public/svg";
+import { IconChevronLeft, IconChevronRight, IconServer } from "public/svg";
 import { Fragment } from "react";
 
 export default function HomePage() {
@@ -88,7 +87,7 @@ export default function HomePage() {
                       <p className="text-sm font-semibold text-secondary">
                         Loremipsumdolorsit
                       </p>
-                      <p className="text-xs font-semibold text-[#667085]">
+                      <p className="text-secondary-muted text-xs font-semibold">
                         192.168.1.1
                       </p>
                     </div>
@@ -110,7 +109,7 @@ export default function HomePage() {
                       <p className="text-sm font-semibold text-secondary">
                         Loremipsumdolorsit
                       </p>
-                      <p className="text-xs font-semibold text-[#667085]">
+                      <p className="text-secondary-muted text-xs font-semibold">
                         192.168.1.1
                       </p>
                     </div>
@@ -126,27 +125,29 @@ export default function HomePage() {
               </tbody>
             </table>
             <div className="mt-3 flex items-center justify-center gap-2.5">
-              <ChevronLeft className="stroke-[#C2C6CE]" />
-              <p className="text-center text-[#667085]">Showing 1-2 of 2</p>
-              <ChevronRight className="stroke-[#858D9D]" />
+              <IconChevronLeft />
+              <p className="text-secondary-muted text-center">
+                Showing 1-2 of 2
+              </p>
+              <IconChevronRight />
             </div>
           </div>
           <div className="rounded-xl border px-7 py-2.5 shadow">
-            <h3 className="mb-4 text-lg font-medium text-[#667085]">
+            <h3 className="text-secondary-muted mb-4 text-lg font-medium">
               Contextual Risk
             </h3>
             <div className="flex justify-center gap-12">
               <ul className="flex list-disc flex-col justify-between py-2 pl-5">
-                <li className="text-base marker:text-[#E5372B]">
+                <li className="marker:text-brand-red text-base">
                   <span className="font-bold">2</span> Critical
                 </li>
                 <li className="text-base marker:text-[#E5372B]">
                   <span className="font-bold">0</span> High
                 </li>
-                <li className="text-base marker:text-[#E5372B]">
+                <li className="text-base marker:text-[#EBA622]">
                   <span className="font-bold">0</span> Medium
                 </li>
-                <li className="text-base marker:text-[#E5372B]">
+                <li className="text-base marker:text-[#08B94E]">
                   <span className="font-bold">0</span> Low
                 </li>
               </ul>

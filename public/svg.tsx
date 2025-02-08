@@ -966,3 +966,33 @@ export const IconServer = () => (
     />
   </svg>
 );
+
+export const IconChevronLeft = () => (
+  <svg
+    width="7"
+    height="11"
+    viewBox="0 0 7 11"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      d="M5.66585 0.839966L6.83252 2.00663L2.99919 5.83997L6.83252 9.6733L5.66585 10.84L0.665854 5.83997L5.66585 0.839966Z"
+      fill="#C2C6CE"
+    />
+  </svg>
+);
+
+export const IconChevronRight = () => (
+  <svg
+    width="7"
+    height="11"
+    viewBox="0 0 7 11"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      d="M1.33415 10.84L0.16748 9.6733L4.00081 5.83997L0.16748 2.00663L1.33415 0.839966L6.33415 5.83997L1.33415 10.84Z"
+      fill="#858D9D"
+    />
+  </svg>
+);

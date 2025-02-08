@@ -54,7 +54,7 @@ const CustomNode = ({ data }: NodeProps<CustomNode>) => {
         {data.text}
       </p>
       {data.subText && (
-        <p className="absolute -bottom-10 text-xs font-semibold text-[#667085]">
+        <p className="text-secondary-muted absolute -bottom-10 text-xs font-semibold">
           {data.subText}
         </p>
       )}
@@ -74,7 +74,7 @@ const initialNodes = [
     data: {
       text: "Loremipsumm",
       icon: VenetianMask,
-      iconColor: "stroke-[#E5372B]",
+      iconColor: "stroke-brand-red",
       background: "bg-[#FFF1F0]",
       meta: {
         icon: Users,
@@ -118,7 +118,7 @@ const initialNodes = [
       meta: {
         icon: ShieldX,
         iconColor: "stroke-[#FFFFFF]",
-        background: "bg-[#E5372B]",
+        background: "bg-brand-red",
       },
     },
   },
@@ -135,7 +135,7 @@ const initialNodes = [
       meta: {
         icon: ShieldX,
         iconColor: "stroke-[#FFFFFF]",
-        background: "bg-[#E5372B]",
+        background: "bg-brand-red",
       },
     },
   },
@@ -193,10 +193,10 @@ function FlowChart() {
       <hr />
       <div className="mt-2.5 flex gap-3">
         <div className="flex items-center justify-center gap-2">
-          <div className="rounded-full bg-[#E5372B] p-1">
-            <ShieldX className="fill-[#E5372B] stroke-white" />
+          <div className="bg-brand-red rounded-full p-1">
+            <ShieldX className="fill-brand-red stroke-white" />
           </div>
-          <p className="text-xl font-bold text-[#E5372B]">Lorem</p>
+          <p className="text-brand-red text-xl font-bold">Lorem</p>
         </div>
         <div className="flex items-center justify-center gap-2">
           <div className="rounded-full bg-[#FF9500] p-1">

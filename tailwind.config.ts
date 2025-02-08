@@ -44,6 +44,7 @@ export default {
           green: "hsl(var(--brand-green))",
           blue: "hsl(var(--brand-blue))",
           "blue-faded": "hsl(var(--brand-blue-faded))",
+          red: "hsl(var(--brand-red))",
         },
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
@@ -62,6 +63,7 @@ export default {
         secondary: {
           DEFAULT: "hsl(var(--secondary))",
           faded: "hsl(var(--secondary-faded))",
+          muted: "hsl(var(--secondary-muted))",
         },
         muted: {
           DEFAULT: "hsl(var(--muted))",
