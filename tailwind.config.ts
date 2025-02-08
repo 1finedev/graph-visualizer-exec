@@ -45,6 +45,7 @@ export default {
           blue: "hsl(var(--brand-blue))",
           "blue-faded": "hsl(var(--brand-blue-faded))",
           red: "hsl(var(--brand-red))",
+          pink: "hsl(var(--brand-pink))",
         },
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",

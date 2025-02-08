@@ -24,7 +24,7 @@ export const initialNodes = [
       handles: [{ type: "source", position: "right", id: 0 }],
       text: "Loremipsumm",
       icon: IconVenetianMask,
-      background: "bg-[#FFF1F0]",
+      background: "bg-brand-pink",
       meta: {
         icon: IconGroup,
         background: "bg-[#7A44FF]",
