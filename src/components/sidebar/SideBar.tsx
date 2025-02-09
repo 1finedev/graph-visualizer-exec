@@ -9,7 +9,7 @@ import {
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
-import { AsteliaLogo, AsteliaLogoText, IconLogout } from "public/svg";
+import { AsteliaLogo, IconLogout } from "public/svg";
 import { useState } from "react";
 
 interface SideBarProps {
@@ -38,16 +38,11 @@ const SideBar = ({ isOpen, toggleIsOpen }: SideBarProps) => {
           )}
         </span>{" "}
         <div>
-          <div className="mb-8 flex items-center gap-2 px-3">
-            <div>
+          {!isOpen && (
+            <div className="mb-8 block gap-2 px-3">
               <AsteliaLogo />
             </div>
-            {isOpen && (
-              <div className="hidden lg:block">
-                <AsteliaLogoText />
-              </div>
-            )}
-          </div>
+          )}
           <div>
             {NAV_LINKS.map((item) => (
               <Link key={item.id} href={item.pageUrl}>

@@ -3,13 +3,12 @@ import FlowChart from "@/components/flowchart";
 import Collapsible from "@/components/ui/collapsible";
 import InfoBlock from "@/components/ui/InfoBlock";
 import { SECTION_COLS_DATA } from "@/data/main";
-import { Fragment } from "react";
 import Table from "../components/ui/table";
 
 export default function HomePage() {
   return (
-    <div className="lg:flex lg:justify-between lg:gap-5">
-      <div className="w-full flex-shrink-0 rounded-2xl bg-white px-4 py-5 lg:w-[30%] lg:px-[30px]">
+    <div className="lg:flex lg:max-h-screen lg:justify-between lg:gap-5">
+      <div className="w-full flex-shrink-0 overflow-y-scroll rounded-2xl bg-white px-4 py-5 lg:w-[30%] lg:px-[30px]">
         <InfoBlock
           className="mb-12"
           title="Description"
@@ -21,10 +20,10 @@ export default function HomePage() {
           text="Lorem ipsum dolor sit amet consectetur. Tempus a id adipiscing fames egestas tellus dis pretium tempus. Justo nisl nisl lorem lectus id ornare. Rhoncus in egestas in amet porttitor pellentesque sit. Amet gravida integer velit felis. Eu consectetur interdum auctor sed aliquam. Eu pulvinar accumsan sed id. Duis a aliquam eu quisque commodo lectus. Lectus ipsum velit purus viverra vulputate viverra in nunc nulla. Euismod rhoncus mauris urna orci gravida sagittis netus. Amet mus in vel etiam. Interdum habitant congue massa in etiam sit. Commodo nibh viverra lobortis augue lorem quam lorem suspendisse."
         />
         <hr />
-        <div className="my-3 grid grid-cols-2">
+        <div className="my-3 flex flex-col gap-[18.5px]">
           {SECTION_COLS_DATA.map((row) => {
             return (
-              <Fragment key={row.id}>
+              <div key={row.id} className="flex items-center gap-6">
                 <h3
                   className={`${row.className} text-sm font-bold lg:text-base`}
                 >
@@ -36,7 +35,7 @@ export default function HomePage() {
                     {row.value}
                   </p>
                 </div>
-              </Fragment>
+              </div>
             );
           })}
         </div>
