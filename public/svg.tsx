@@ -971,6 +971,7 @@ export const IconServer = () => (
 
 export const IconChevronLeft = () => (
   <svg
+    className="cursor-pointer"
     width="7"
     height="11"
     viewBox="0 0 7 11"
@@ -986,6 +987,7 @@ export const IconChevronLeft = () => (
 
 export const IconChevronRight = () => (
   <svg
+    className="cursor-pointer"
     width="7"
     height="11"
     viewBox="0 0 7 11"
