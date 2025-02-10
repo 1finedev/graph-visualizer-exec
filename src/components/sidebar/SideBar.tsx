@@ -51,7 +51,7 @@ const SideBar = ({ isOpen, toggleIsOpen }: SideBarProps) => {
               <Link key={item.id} href={item.pageUrl}>
                 <div
                   onClick={() => setCurrentPage(item.id)}
-                  className={`${currentPage === item.id && "bg-accent"} ${!isOpen ? "w-fit" : "gap-2"} mb-1.5 flex items-center rounded-lg px-3 py-2.5`}
+                  className={`${currentPage === item.id && "bg-accent"} ${!isOpen ? "w-fit" : "gap-2"} mb-1.5 flex items-center rounded-lg py-2.5 pl-1.5 lg:px-3`}
                 >
                   <Tooltip>
                     <TooltipTrigger>
