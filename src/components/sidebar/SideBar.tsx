@@ -19,7 +19,7 @@ interface SideBarProps {
 
 const SideBar = ({ isOpen, toggleIsOpen }: SideBarProps) => {
   const [currentPage, setCurrentPage] = useState(1); // use the id to track just to simulate the select
-
+  console.log(isOpen);
   return (
     <div
       className={`${isOpen ? "w-[16.5vw]" : "w-fit"} fixed flex min-h-screen flex-col rounded-br-xl rounded-tr-xl bg-white px-4 py-7 shadow-sidebar transition-all duration-300`}
@@ -95,24 +95,34 @@ const SideBar = ({ isOpen, toggleIsOpen }: SideBarProps) => {
           ))}
 
           <hr className="my-5" />
-          {isOpen ? (
-            <div className="flex cursor-pointer items-center justify-between">
-              <div className="hidden gap-3 lg:flex lg:items-center">
-                <Image src="/avatar.jpeg" width={60} height={60} alt="" />
-                <div>
-                  <p className="text-base">Lorem</p>
-                  <p className="text-base">Lorem</p>
+          <div className="flex cursor-pointer items-center justify-between">
+            {isOpen ? (
+              <>
+                <div className="flex items-center gap-3">
+                  <Image
+                    src="/avatar.jpeg"
+                    width={48}
+                    height={48}
+                    alt="User avatar"
+                    className="rounded-full"
+                  />
+                  <div className="hidden lg:block">
+                    <p className="text-base font-medium">Lorem</p>
+                    <p className="text-sm text-gray-600">Lorem</p>
+                  </div>
                 </div>
-              </div>
-              <div className="hidden lg:block">
                 <IconLogout />
-              </div>
-            </div>
-          ) : (
-            <div>
-              <Image src="/avatar.jpeg" width={40} height={40} alt="" />
-            </div>
-          )}
+              </>
+            ) : (
+              <Image
+                src="/avatar.jpeg"
+                width={40}
+                height={40}
+                alt="User avatar"
+                className="rounded-full"
+              />
+            )}
+          </div>
         </div>
       </nav>
     </div>
