@@ -95,9 +95,9 @@ const SideBar = ({ isOpen, toggleIsOpen }: SideBarProps) => {
           ))}
 
           <hr className="my-5" />
-          {isOpen && (
+          {isOpen ? (
             <div className="flex cursor-pointer items-center justify-between">
-              <div className="gap-3 lg:flex lg:items-center">
+              <div className="hidden gap-3 lg:flex lg:items-center">
                 <Image src="/avatar.jpeg" width={60} height={60} alt="" />
                 <div>
                   <p className="text-base">Lorem</p>
@@ -108,10 +108,11 @@ const SideBar = ({ isOpen, toggleIsOpen }: SideBarProps) => {
                 <IconLogout />
               </div>
             </div>
+          ) : (
+            <div>
+              <Image src="/avatar.jpeg" width={40} height={40} alt="" />
+            </div>
           )}
-          <div>
-            <Image src="/avatar.jpeg" width={40} height={40} alt="" />
-          </div>
         </div>
       </nav>
     </div>
