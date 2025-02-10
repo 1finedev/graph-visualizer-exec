@@ -8,7 +8,7 @@ import Table from "../components/ui/table";
 export default function HomePage() {
   return (
     <div className="lg:flex lg:max-h-screen lg:justify-between lg:gap-5">
-      <div className="w-full flex-shrink-0 overflow-y-scroll rounded-2xl bg-white px-4 py-5 lg:w-[30%] lg:px-[30px]">
+      <div className="scrollbar-hide w-full flex-shrink-0 overflow-y-scroll rounded-2xl bg-white px-4 py-5 lg:w-[23.67vw] lg:px-[30px]">
         <InfoBlock
           className="mb-12"
           title="Description"
@@ -64,7 +64,36 @@ export default function HomePage() {
         <h3 className="my-5 text-xl font-bold text-brand-green">
           Lorem ipsum dolor sit
         </h3>
-        <Table />
+        <div className="gap-5 lg:flex">
+          <Table />
+          <div className="rounded-xl border px-7 py-2.5 shadow">
+            <h3 className="mb-4 text-lg font-medium text-secondary-muted">
+              Contextual Risk
+            </h3>
+            <div className="mb-5 flex items-center justify-between lg:gap-12">
+              <ul className="flex list-disc flex-col py-2 pl-5">
+                <li className="mb-3 text-base marker:text-brand-red">
+                  <span className="font-bold">2</span> Critical
+                </li>
+                <li className="mb-3 text-base marker:text-[#E5372B]">
+                  <span className="font-bold">0</span> High
+                </li>
+                <li className="mb-3 text-base marker:text-[#EBA622]">
+                  <span className="font-bold">0</span> Medium
+                </li>
+                <li className="mb-3 text-base marker:text-[#08B94E]">
+                  <span className="font-bold">0</span> Low
+                </li>
+              </ul>
+
+              <div className="flex h-[25vw] w-[25vw] items-center justify-center rounded-full border-8 border-[#C6190D] lg:h-[8vw] lg:w-[8vw] lg:border-8">
+                <span className="text-3xl font-semibold text-[#656575] lg:text-4xl">
+                  2
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   );

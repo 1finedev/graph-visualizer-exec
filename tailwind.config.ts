@@ -1,3 +1,4 @@
+import scrollbarHide from "tailwind-scrollbar-hide";
 import { type Config } from "tailwindcss";
 import tailwindAnimate from "tailwindcss-animate";
 import { fontFamily } from "tailwindcss/defaultTheme";
@@ -96,5 +97,5 @@ export default {
     "bg-brand-pink",
     "bg-brand-purple", // Ensure this class is always included
   ],
-  plugins: [tailwindAnimate],
+  plugins: [tailwindAnimate, scrollbarHide],
 } satisfies Config;

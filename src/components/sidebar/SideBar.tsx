@@ -9,7 +9,7 @@ import {
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
-import { AsteliaLogo, IconLogout } from "public/svg";
+import { AsteliaLogo, AsteliaLogoText, IconLogout } from "public/svg";
 import { useState } from "react";
 
 interface SideBarProps {
@@ -22,9 +22,7 @@ const SideBar = ({ isOpen, toggleIsOpen }: SideBarProps) => {
 
   return (
     <div
-      className={`fixed min-h-screen shadow-sidebar ${
-        isOpen ? "w-full" : "w-[5vw]"
-      } flex max-w-[17vw] flex-col rounded-br-xl rounded-tr-xl bg-white px-4 py-7 transition-all duration-300`}
+      className={`${isOpen ? "w-[16.5vw]" : "w-fit"} fixed flex min-h-screen flex-col rounded-br-xl rounded-tr-xl bg-white px-4 py-7 shadow-sidebar transition-all duration-300`}
     >
       <nav className="relative flex flex-1 flex-col justify-between">
         <span
@@ -38,17 +36,22 @@ const SideBar = ({ isOpen, toggleIsOpen }: SideBarProps) => {
           )}
         </span>{" "}
         <div>
-          {!isOpen && (
-            <div className="mb-8 block gap-2 px-3">
+          <div className="mb-8 flex items-center">
+            <div>
               <AsteliaLogo />
             </div>
-          )}
+            {isOpen && (
+              <div className="ml-2 hidden lg:block">
+                <AsteliaLogoText />
+              </div>
+            )}
+          </div>
           <div>
             {NAV_LINKS.map((item) => (
               <Link key={item.id} href={item.pageUrl}>
                 <div
                   onClick={() => setCurrentPage(item.id)}
-                  className={`${currentPage === item.id && "bg-accent"} ${!isOpen && "w-fit"} mb-1.5 flex items-center gap-2 rounded-lg px-3 py-2.5`}
+                  className={`${currentPage === item.id && "bg-accent"} ${!isOpen ? "w-fit" : "gap-2"} mb-1.5 flex items-center rounded-lg px-3 py-2.5`}
                 >
                   <Tooltip>
                     <TooltipTrigger>
@@ -77,7 +80,7 @@ const SideBar = ({ isOpen, toggleIsOpen }: SideBarProps) => {
             <Link key={item.id} href={item.pageUrl}>
               <div
                 onClick={() => setCurrentPage(item.id)}
-                className={`${currentPage === item.id && "bg-accent"} ${!isOpen && "w-fit"} mb-1.5 flex items-center gap-2 rounded-lg px-3 py-2.5`}
+                className={`${currentPage === item.id && "bg-accent"} ${!isOpen ? "w-fit" : "gap-2"} mb-1.5 flex items-center rounded-lg px-3 py-2.5`}
               >
                 <div>
                   <item.icon hovered={currentPage === item.id} />
@@ -92,19 +95,22 @@ const SideBar = ({ isOpen, toggleIsOpen }: SideBarProps) => {
           ))}
 
           <hr className="my-5" />
-          <div className="flex cursor-pointer items-center justify-between">
-            {isOpen && (
-              <div className="hidden gap-3 lg:flex lg:items-center">
+          {isOpen && (
+            <div className="flex cursor-pointer items-center justify-between">
+              <div className="gap-3 lg:flex lg:items-center">
                 <Image src="/avatar.jpeg" width={60} height={60} alt="" />
                 <div>
                   <p className="text-base">Lorem</p>
                   <p className="text-base">Lorem</p>
                 </div>
               </div>
-            )}
-            <div className="px-3 md:px-0">
-              <IconLogout />
+              <div className="hidden lg:block">
+                <IconLogout />
+              </div>
             </div>
+          )}
+          <div>
+            <Image src="/avatar.jpeg" width={40} height={40} alt="" />
           </div>
         </div>
       </nav>

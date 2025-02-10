@@ -19,7 +19,7 @@ export default function RootLayout({
 }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en" className={`${publicSans.className}`}>
-      <body className="h-screen w-full">
+      <body className="flex h-screen w-full flex-col">
         <MainLayout>{children}</MainLayout>
       </body>
     </html>

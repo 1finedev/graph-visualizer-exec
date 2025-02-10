@@ -23,7 +23,7 @@ export type TCustomNode = Node<CustomData, "custom">;
 const CustomNode = ({ data }: NodeProps<TCustomNode>) => {
   return (
     <div
-      className={`relative flex cursor-pointer items-center justify-center rounded-full p-3 lg:mx-14 ${data.background} `}
+      className={`relative flex cursor-pointer items-center justify-center rounded-full p-3 ${data.background} ${data?.subText && "mb-12"}`}
     >
       {data?.meta && (
         <div

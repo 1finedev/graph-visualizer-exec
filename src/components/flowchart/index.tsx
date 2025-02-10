@@ -20,7 +20,7 @@ function FlowChart() {
 
   return (
     <div className="rounded-2xl bg-[#FAFAFA] p-4">
-      <div className="relative h-[40vh]">
+      <div className="relative h-[23.5vh]">
         <ReactFlow
           nodes={nodes}
           nodeTypes={nodeTypes}
@@ -52,7 +52,7 @@ function FlowChart() {
           <div className="rounded-full bg-[#FF9500] p-1">
             <IconShieldX stroke="1.5" />
           </div>
-          <p className="text-sm font-bold leading-[38px] text-brand-red lg:text-base">
+          <p className="text-sm font-bold leading-[38px] text-[#FF9500] lg:text-base">
             Lorem
           </p>
         </div>
@@ -60,7 +60,7 @@ function FlowChart() {
           <div className="rounded-full bg-brand-green p-1">
             <IconShieldX stroke="1.5" />
           </div>
-          <p className="text-sm font-bold leading-[38px] text-brand-red lg:text-base">
+          <p className="text-base font-bold leading-[38px] text-brand-green lg:text-base">
             Lorem
           </p>
         </div>
